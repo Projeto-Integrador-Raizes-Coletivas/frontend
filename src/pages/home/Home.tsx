@@ -1,5 +1,5 @@
-import Sobrepi from "../../components/sobrepi/Sobrepi"
-import Sobreps from "../../components/sobreps/Sobreps"
+import Sobrepi from "../../assets/components/sobrepi/Sobrepi"
+import Sobreps from "../../assets/components/sobreps/Sobreps"
 
 function Home() {
 
