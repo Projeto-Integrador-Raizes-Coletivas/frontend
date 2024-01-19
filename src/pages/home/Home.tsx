@@ -1,3 +1,5 @@
+import Sobrepi from "../../components/sobrepi/Sobrepi"
+import Sobreps from "../../components/sobreps/Sobreps"
 
 function Home() {
 
@@ -39,6 +41,14 @@ function Home() {
                         <p className="nome-produto">Banana Prata Orgânica 600g</p>
                         <div className="preco text-verde font-bold">R$10,99</div>
                         <button className="bg-verde text-white px-6 py-3">Adicionar</button>
+                    </div>
+                    <div className="flex justify-center pb-5">
+                    </div>
+                </div>
+                <div className="flex justify-center">
+                    <div id="sobres" className="container grid grid-cols-1 md:grid-cols-[5fr_3fr] gap-4 py-4">
+                        <Sobrepi />
+                        <Sobreps />
                     </div>
                 </div>
             </div>
