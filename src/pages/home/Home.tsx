@@ -1,51 +1,39 @@
-import Sobrepi from "../../components/sobrepi/Sobrepi"
-import Sobreps from "../../components/sobreps/Sobreps"
+import { Clock, GlobeHemisphereWest, Plant, Truck } from "@phosphor-icons/react"
 
 function Home() {
+
+    const avisos = [
+        { aviso1: "Frete grátis a partir de R$ 79,90" },
+        { aviso2: "Peça até às 16h e receba amanhã" },
+        { aviso3: "Produtos colhidos no dia da entrega" },
+        { aviso4: "Contribua para um planeta melhor" }
+    ];
 
     return (
         <div>
             <div className="px-32 py-36 bg-verde-claro text-5xl	font-bold text-white">
-                Bem vindos ao Raízes Coletivas
             </div>
 
-            <div className="bg-seasalt">
-                <div className="px-24 py-24">
-                    <h2 className="text-5xl	font-bold">Nossos Produtos</h2>
+            <div className="bg-bege flex flex-row justify-center gap-x-20 p-2 text-sm">
+                <div className="flex gap-x-2 p-2 items-center">
+                    <Truck size={20} />
+                    <p>{avisos[0].aviso1}</p>
                 </div>
-
-                <div className="flex justify-start w-10/12 mx-auto gap-4">
-                    <div className="card-produto bg-white w-60 flex flex-col">
-                        <img className="" src="https://cdn.shoppub.io/cdn-cgi/image/w=1000,h=1000,q=80,f=auto/cenourao/media/uploads/produtos/foto/dc1f0bf8b4a3file.png" alt="Imagem do produto" />
-                        <p className="nome-produto">Banana Prata Orgânica 600g</p>
-                        <div className="preco text-verde font-bold">R$10,99</div>
-                        <button className="bg-verde text-white px-6 py-3">Adicionar</button>
-                    </div>
-
-                    <div className="card-produto bg-white w-60 flex flex-col">
-                        <img className="" src="https://cdn.shoppub.io/cdn-cgi/image/w=1000,h=1000,q=80,f=auto/cenourao/media/uploads/produtos/foto/dc1f0bf8b4a3file.png" alt="Imagem do produto" />
-                        <p className="nome-produto">Banana Prata Orgânica 600g</p>
-                        <div className="preco text-verde font-bold">R$10,99</div>
-                        <button className="bg-verde text-white px-6 py-3">Adicionar</button>
-                    </div>
-
-                    <div className="card-produto bg-white w-60 flex flex-col">
-                        <img className="" src="https://cdn.shoppub.io/cdn-cgi/image/w=1000,h=1000,q=80,f=auto/cenourao/media/uploads/produtos/foto/dc1f0bf8b4a3file.png" alt="Imagem do produto" />
-                        <p className="nome-produto">Banana Prata Orgânica 600g</p>
-                        <div className="preco text-verde font-bold">R$10,99</div>
-                        <button className="bg-verde text-white px-6 py-3">Adicionar</button>
-                    </div>
-
-                    <div className="card-produto bg-white w-60 flex flex-col">
-                        <img className="" src="https://cdn.shoppub.io/cdn-cgi/image/w=1000,h=1000,q=80,f=auto/cenourao/media/uploads/produtos/foto/dc1f0bf8b4a3file.png" alt="Imagem do produto" />
-                        <p className="nome-produto">Banana Prata Orgânica 600g</p>
-                        <div className="preco text-verde font-bold">R$10,99</div>
-                        <button className="bg-verde text-white px-6 py-3">Adicionar</button>
-                    </div>
-                    <div className="flex justify-center pb-5">
-                    </div>
+                <div className="flex gap-x-2 p-2 items-center">
+                    <Clock size={20} />
+                    <p>{avisos[1].aviso2}</p>
+                </div>
+                <div className="flex gap-x-2 p-2 items-center">
+                    <Plant size={20} />
+                    <p>{avisos[2].aviso3}</p>
+                </div>
+                <div className="flex gap-x-2 p-2 items-center">
+                    <GlobeHemisphereWest size={20} />
+                    <p>{avisos[3].aviso4}</p>
                 </div>
             </div>
+
+            <div className="bg-seasalt"></div>
         </div>
     )
 }
