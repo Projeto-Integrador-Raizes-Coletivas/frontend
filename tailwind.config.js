@@ -12,6 +12,9 @@ export default {
         "bege": "#e3ddd8",
         "seasalt": "#f8f6f4",
         "bege-50": "#f2eeea"
+      },
+      fontFamily: {
+        archivo: ['Archivo', 'sans-serif'],
       }
     },
   },
