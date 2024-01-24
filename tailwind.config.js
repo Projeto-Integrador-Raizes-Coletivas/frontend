@@ -10,7 +10,8 @@ export default {
         "verde": "#285d56",
         "verde-claro": "#c4d446",
         "bege": "#e3ddd8",
-        "seasalt": "#f8f6f4"
+        "seasalt": "#f8f6f4",
+        "bege-50": "#f2eeea"
       }
     },
   },

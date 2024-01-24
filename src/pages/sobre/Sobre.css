@@ -1,0 +1,100 @@
+#texto p {
+    margin-left: 64px;
+    margin-right: 64px;
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+#cards h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 12.8px;
+}
+
+#cards h3 {
+    text-align: center;
+    font-size: 11.2px;
+}
+
+#cards #text {
+    text-align: center;
+    margin: 15px;
+    font-size: 11.2px;
+}
+
+#links #github {
+    background-color: #285d56;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+
+}
+
+#links #github:hover {
+
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+
+    background: linear-gradient(-45deg, #C4D446, #285D56, #5BBA97);
+    background-size: 400% 400%;
+    animation: gradient 6s ease-in infinite alternate;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#links #linkedin {
+    background-color: #011638;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+
+}
+
+#links #linkedin:hover {
+
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+
+    background: linear-gradient(-45deg, #5ba2ba, #011638, #5ba2ba);
+    background-size: 400% 400%;
+    animation: gradient 6s ease-in infinite alternate;
+}
+
+#lastcard h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 12.8px;
+}
+
+#lastcard h3 {
+    text-align: center;
+    font-size: 11.2px;
+}
+
+#lastcard #text {
+    text-align: center;
+    margin: 15px;
+    font-size: 11.2px;
+}
+
+#lastcard {
+    width: 610px;
+}
