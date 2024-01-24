@@ -3,6 +3,7 @@ import Home from "./pages/home/Home"
 import Navbar from "./components/navbar/Navbar"
 import Footer from "./components/footer/Footer"
 import { AuthProvider } from "./contexts/AuthContext"
+import Login from "./pages/login/Login"
 
 function App() {
     return (
@@ -12,6 +13,8 @@ function App() {
                     <Navbar />
                     <div className='min-h-[80vh]'>
                         <Routes>
+                        
+                        <Route path="/login" element={<Login />} />
                             <Route path="/" element={<Home />} />
                             <Route path="/home" element={<Home />} />
                         </Routes>
