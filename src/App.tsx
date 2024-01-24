@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Home from "./pages/home/Home"
 import Navbar from "./components/navbar/Navbar"
 import Footer from "./components/footer/Footer"
+import Cadastro from "./pages/cadastro/Cadastro"
 import { AuthProvider } from "./contexts/AuthContext"
 import Login from "./pages/login/Login"
 
@@ -17,6 +18,7 @@ function App() {
                         <Route path="/login" element={<Login />} />
                             <Route path="/" element={<Home />} />
                             <Route path="/home" element={<Home />} />
+                            <Route path="/cadastro" element={<Cadastro />} />
                         </Routes>
                     </div>
                     <Footer />
