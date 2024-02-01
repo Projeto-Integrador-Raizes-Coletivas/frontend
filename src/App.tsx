@@ -6,6 +6,7 @@ import Cadastro from "./pages/cadastro/Cadastro"
 import Login from "./pages/login/Login"
 import Sobre from "./pages/sobre/Sobre"
 import { AuthProvider } from "./contexts/AuthContext"
+import DeletarCategoria from "./components/categoria/deletarCategoria/DeletarCategoria"
 
 function App() {
     return (
@@ -20,6 +21,8 @@ function App() {
                             <Route path="/cadastro" element={<Cadastro />} />
                             <Route path="/login" element={<Login />} />
                             <Route path="/sobre" element={<Sobre />} />
+                            <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
+                            
                         </Routes>
                     </div>
                     <Footer />
