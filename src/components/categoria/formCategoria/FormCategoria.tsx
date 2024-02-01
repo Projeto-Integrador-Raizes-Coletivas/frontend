@@ -114,16 +114,16 @@ function FormCategoria() {
                     />
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="nome" className=" font-bold">Classificação da Categoria</label>
+                    <label htmlFor="classificacao" className=" font-bold">Classificação da Categoria</label>
                     <input
                         type="text"
                         placeholder="Descreva aqui sua categoria"
-                        name='Classificação'
+                        name='classificacao'
                         className="border-2 border-slate-400 rounded p-2"
                         value={categoria.classificacao}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         required
-                        onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('Digite uma categoria válida!')}
+                        onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('Digite uma Classificação válida!')}
                         onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}
                     />
                 </div>
