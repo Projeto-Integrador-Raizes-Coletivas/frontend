@@ -3,9 +3,12 @@ import Categoria from "../../../models/Categoria"
 import { buscar } from "../../../service/Service"
 import { DNA } from "react-loader-spinner"
 import CardCategoria from "../cardCategoria/CardCategoria"
+import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../../../contexts/AuthContext"
 
 function ListaCategorias() {
+
+    const navigate = useNavigate();
 
     const [categorias, setCategorias] = useState<Categoria[]>([])
 
@@ -25,6 +28,14 @@ function ListaCategorias() {
             }
         }
     }
+
+    useEffect(() => {
+        if (token === '') {
+            alert('Você precisa estar logado!')
+            navigate('/')
+        }
+    }, [token])
+
 
     useEffect(() => {
         buscarCategorias()
