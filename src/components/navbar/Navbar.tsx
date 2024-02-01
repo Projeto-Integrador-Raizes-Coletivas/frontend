@@ -1,4 +1,4 @@
-import { MagnifyingGlass, SignIn, SignOut, Stack, User, UsersThree } from "@phosphor-icons/react";
+import { FolderPlus, Folders, MagnifyingGlass, SignIn, SignOut, Stack, UserPlus, UsersThree } from "@phosphor-icons/react";
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -33,27 +33,29 @@ function Navbar() {
                     Produtos
                 </Link>
 
+                <Link to="/categorias" className="flex items-center gap-2 text-white font-medium">
+                    <Folders size={20} />
+                    Categorias
+                </Link>
+
+                <Link to="/cadastrarCategoria" className="flex items-center gap-2 text-white font-medium">
+                    <FolderPlus size={20} />
+                    Criar categoria
+                </Link>
+
                 <Link to="/sobre" className="flex items-center gap-2 text-white font-medium">
                     <UsersThree size={20} />
                     Sobre
                 </Link>
 
                 <Link to="/cadastro" className="flex items-center gap-2 text-white font-medium">
-                    <User size={20} />
+                    <UserPlus size={20} />
                     Cadastrar
                 </Link>
 
                 <Link to="/login" className="flex items-center gap-2 text-white font-medium">
                     <SignIn size={20} />
                     Login
-                </Link>
-
-                <Link to="/categorias" className="flex items-center gap-2 text-white font-medium">
-                    CATEGORIAS
-                    </Link>
-
-                <Link to="/cadastrarCategoria" className="flex items-center gap-2 text-white font-medium">
-                    CREATE CATEGORIAS
                 </Link>
 
                 <div className="flex items-center gap-2 text-white font-medium cursor-pointer" onClick={logout}>
