@@ -9,7 +9,8 @@ function Sobre() {
                     <img src="https://ik.imagekit.io/padrin/Pi/Bem%20Vindo%20ao%20mundo%20mais%20verde!%20(1).png?updatedAt=1706659675717" alt="" />
                 </div>
                 <div id="texto" className=' mt-10 mb-3 mx-[33%]'>
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi praesentium quos alias ut, veniam impedit nulla, debitis incidunt laudantium laboriosam quaerat a. Pariatur incidunt atque ipsum blanditiis quas, autem necessitatibus.</p>
+                    <p> Raizes Coletivas é um projeto inspirado em um dos Objetivos de Desenvolvimento Sustentável da ONU - a ODS 2 - Fome Zero e Agricultura Sustentável.
+                        Nossa missão é comercializar produtos frescos e orgânicos, com o menor impacto ambiental e reverter parte dos lucros para hortas coletivas, com o objetivo distribuir para comunidades locais.</p>
                 </div>
                 <div className='w-[33%] bg-verde mb-10'>
                     <p className='text-transparent'>/</p>

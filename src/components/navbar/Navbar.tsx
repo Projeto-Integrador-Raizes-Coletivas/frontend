@@ -48,6 +48,14 @@ function Navbar() {
                     Login
                 </Link>
 
+                <Link to="/categorias" className="flex items-center gap-2 text-white font-medium">
+                    CATEGORIAS
+                    </Link>
+
+                <Link to="/cadastrarCategoria" className="flex items-center gap-2 text-white font-medium">
+                    CREATE CATEGORIAS
+                </Link>
+
                 <div className="flex items-center gap-2 text-white font-medium cursor-pointer" onClick={logout}>
                     <SignOut size={20} />
                     Sair
