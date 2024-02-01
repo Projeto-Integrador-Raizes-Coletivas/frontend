@@ -129,7 +129,7 @@ function FormCategoria() {
                 </div>
                 <button
                     className="rounded font-bold bg-slate-400 hover:bg-slate-600
-                     w-1/2 py-2 mx-auto flex justify-center"
+                    w-1/2 py-2 mx-auto flex justify-center"
                     type="submit">
 
                     {isLoading ?
