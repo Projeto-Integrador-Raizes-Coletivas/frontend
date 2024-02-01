@@ -4,34 +4,22 @@ import './Sobre.css'
 function Sobre() {
     return (
         <div id="container" className="bg-seasalt flex justify-center">
-            <div id="subcontainer" className="flex flex-col items-center mx-8">
-                <div id="texto" className="flex flex-col  border-solid rounded-3xl  bg-white  w-[420px] md:w-[64%] mt-5 mb-10 shadow-lg shadow-bege hover:shadow-verde transition ease-in-out hover:scale-[103%] delay-50 duration-700 ">
-                    <h1 className="text-2xl md:text-5xl my-[32px] font-bold text-center">Sobre</h1>
-                    <p className="md:text-xl">Vamos todos cantar de coração
-                        A Cruz de Malta é o meu pendão
-                        Tu tens o nome do heroico português
-                        Vasco da Gama, a tua fama assim se fez</p>
-
-                    <p className="md:text-xl">
-                        Tua imensa torcida é bem feliz
-                        Norte-Sul, Norte-Sul deste Brasil
-                        Tua estrela, na terra a brilhar
-                        Ilumina o mar</p>
-
-                    <p className="md:text-xl">
-                        No atletismo, és um braço
-                        No remo, és imortal
-                        No futebol, és um traço
-                        De união Brasil-Portugal</p>
-                    <div id="img" className="flex place-items-center justify-center m-10">
-                        <img src="https://ik.imagekit.io/padrin/raizes-coletivas-high-resolution-logo-transparent.png?updatedAt=1705711926998" alt="" width={"40%"} />
-                    </div>
+            <div id="subcontainer" className="flex flex-col items-center">
+                <div className='items-center flex'>
+                    <img src="https://ik.imagekit.io/padrin/Pi/Bem%20Vindo%20ao%20mundo%20mais%20verde!%20(1).png?updatedAt=1706659675717" alt="" />
                 </div>
-                <div id='cards' className='grid md:grid-cols-2 gap-10 content-center w-[70%] md:w-[100%] 2xl:w-[70%] mb-10' >
+                <div id="texto" className=' mt-10 mb-3 mx-[33%]'>
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi praesentium quos alias ut, veniam impedit nulla, debitis incidunt laudantium laboriosam quaerat a. Pariatur incidunt atque ipsum blanditiis quas, autem necessitatibus.</p>
+                </div>
+                <div className='w-[33%] bg-verde mb-10'>
+                    <p className='text-transparent'>/</p>
+                </div>
+
+                <div id='cards' className='grid xl:grid-cols-2 gap-10 content-center w-[70%] md:w-[70%] xl:w-[90%] 2xl:w-[70%] mb-10' >
                     <div id='card' className='grid grid-cols-[1fr_2fr] border-solid rounded-3xl shadow-lg hover:shadow-verde bg-white
-                    hover:scale-105 delay-50 duration-700'>
+                    hover:scale-105 delay-50 duration-700 pb-2 md:pb-1'>
                         <div id='img' className='flex flex-col place-items-center justify-center ml-[10%] py-2'>
-                            <img src="https://ik.imagekit.io/padrin/711769.png?updatedAt=1705680795717" alt="" width={"200px"} />
+                            <img src="https://ik.imagekit.io/padrin/Pi/Amandinha.png?updatedAt=1706652234630" alt="" width={"200px"} />
                         </div>
                         <div className='flex flex-col w-full justify-around'>
                             <div className='flex flex-col justify-center items-center'>
@@ -39,47 +27,47 @@ function Sobre() {
                                 <h3>Desenvolvedora Full Stack Java</h3>
                             </div>
                             <div id='text'>
-                                <p>"texto"</p>
-                                <p>~Escritor</p>
+                                <p>"Aquele que deslocou a montanha é o que começou a remover as pequenas pedras"</p>
+                                <p>~Autor desconhecido</p>
                             </div>
                             <div id="links" className="flex flex-row items-center gap-4 text-center justify-center ">
                                 <div id='github'>
-                                    <a href=""><GithubLogo size={40} weight='regular' color='white' /></a>
+                                    <a href="https://github.com/amandats4i" target='_blank'><GithubLogo size={40} weight='regular' color='white' /></a>
                                 </div>
                                 <div id='linkedin'>
-                                    <a href=""><LinkedinLogo size={40} weight='regular' color='white' /></a>
+                                    <a href="https://www.linkedin.com/in/amandapereira2000/" target='_blank'><LinkedinLogo size={40} weight='regular' color='white' /></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div id='card' className='grid grid-cols-[1fr_2fr] border-solid rounded-3xl shadow-lg hover:shadow-verde bg-white
-                    hover:scale-105 delay-50 duration-700'>
-                        <div id='img' className='flex flex-col place-items-center justify-center ml-[10%] py-2'>
-                            <img src="https://ik.imagekit.io/padrin/711769.png?updatedAt=1705680795717" alt="" width={"200px"} />
+                    hover:scale-105 delay-50 duration-700 pb-2 md:pb-1'>
+                        <div id='img' className='flex flex-col place-items-center justify-center ml-[10%] py-2 '>
+                            <img src="https://ik.imagekit.io/padrin/Pi/Design%20sem%20nome.png?updatedAt=1706648705660" alt="" width={"200px"} />
                         </div>
                         <div className='flex flex-col w-full justify-around'>
                             <div className='flex flex-col justify-center items-center'>
-                                <h2>Bryan Vieira</h2>
+                                <h2>Bryan S. Vieira</h2>
                                 <h3>Desenvolvedor Full Stack Java</h3>
                             </div>
                             <div id='text'>
-                                <p>"texto"</p>
-                                <p>~Escritor</p>
+                                <p>"Onde estiver, seja lá como for, tenha fé, porque até no lixão nasce flor."</p>
+                                <p>~Mano Brown (Racionais MCs)</p>
                             </div>
                             <div id="links" className="flex flex-row items-center gap-4 text-center justify-center ">
                                 <div id='github'>
-                                    <a href=""><GithubLogo size={40} weight='regular' color='white' /></a>
+                                    <a href="https://github.com/uPadrin" target='_black'><GithubLogo size={40} weight='regular' color='white' /></a>
                                 </div>
                                 <div id='linkedin'>
-                                    <a href=""><LinkedinLogo size={40} weight='regular' color='white' /></a>
+                                    <a href="https://www.linkedin.com/in/bryan-vieira/" target='_black'><LinkedinLogo size={40} weight='regular' color='white' /></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div id='card' className='grid grid-cols-[1fr_2fr] border-solid rounded-3xl shadow-lg hover:shadow-verde bg-white
-                    hover:scale-105 delay-50 duration-700'>
+                    hover:scale-105 delay-50 duration-700 pb-2 md:pb-1'>
                         <div id='img' className='flex flex-col place-items-center justify-center ml-[10%] py-2'>
-                            <img src="https://ik.imagekit.io/padrin/711769.png?updatedAt=1705680795717" alt="" width={"200px"} />
+                            <img src="https://ik.imagekit.io/padrin/Pi/Carol.png?updatedAt=1706652076388" alt="" width={"200px"} />
                         </div>
                         <div className='flex flex-col w-full justify-around'>
                             <div className='flex flex-col justify-center items-center'>
@@ -87,23 +75,23 @@ function Sobre() {
                                 <h3>Desenvolvedora Full Stack Java</h3>
                             </div>
                             <div id='text'>
-                                <p>"texto"</p>
-                                <p>~Escritor</p>
+                                <p>"Tudo o que temos de decidir é o que fazer com o tempo que nos é dado."</p>
+                                <p>~J.R.R. Tolkien</p>
                             </div>
                             <div id="links" className="flex flex-row items-center gap-4 text-center justify-center ">
                                 <div id='github'>
-                                    <a href=""><GithubLogo size={40} weight='regular' color='white' /></a>
+                                    <a href="https://github.com/carolinasdias" target='_blank'><GithubLogo size={40} weight='regular' color='white' /></a>
                                 </div>
                                 <div id='linkedin'>
-                                    <a href=""><LinkedinLogo size={40} weight='regular' color='white' /></a>
+                                    <a href="https://www.linkedin.com/in/carolinasdias/" target='_blank'><LinkedinLogo size={40} weight='regular' color='white' /></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div id='card' className='grid grid-cols-[1fr_2fr] border-solid rounded-3xl shadow-lg hover:shadow-verde bg-white
-                    hover:scale-105 delay-50 duration-700'>
+                    hover:scale-105 delay-50 duration-700 pb-2 md:pb-1'>
                         <div id='img' className='flex flex-col place-items-center justify-center ml-[10%] py-2'>
-                            <img src="https://ik.imagekit.io/padrin/711769.png?updatedAt=1705680795717" alt="" width={"200px"} />
+                            <img src="https://ik.imagekit.io/padrin/Pi/gabs.png?updatedAt=1706649666756" alt="" width={"200px"} />
                         </div>
                         <div className='flex flex-col w-full justify-around'>
                             <div className='flex flex-col justify-center items-center'>
@@ -111,25 +99,25 @@ function Sobre() {
                                 <h3>Desenvolvedor Full Stack Java</h3>
                             </div>
                             <div id='text'>
-                                <p>"texto"</p>
-                                <p>~Escritor</p>
+                                <p >"Sempre fui sonhador, é isso que me mantém vivo!"</p>
+                                <p>~Afro X</p>
                             </div>
                             <div id="links" className="flex flex-row items-center gap-4 text-center justify-center ">
                                 <div id='github'>
-                                    <a href=""><GithubLogo size={40} weight='regular' color='white' /></a>
+                                    <a href="https://github.com/gabzoom" target='_blank'><GithubLogo size={40} weight='regular' color='white' /></a>
                                 </div>
                                 <div id='linkedin'>
-                                    <a href=""><LinkedinLogo size={40} weight='regular' color='white' /></a>
+                                    <a href="https://www.linkedin.com/in/gabrielrodriguesz/" target='_blank'><LinkedinLogo size={40} weight='regular' color='white' /></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id='lastcard' className='content-center 2xl:w-[37%] mb-10'>
+                <div id='lastcard' className='content-center mb-10 w-[71%] xl:w-[44%] 2xl:w-[34.5%]'>
                     <div id='card' className='grid grid-cols-[1fr_2fr] border-solid rounded-3xl shadow-lg hover:shadow-verde bg-white
-                    hover:scale-105 delay-50 duration-700'>
+                    hover:scale-105 delay-50 duration-700 pb-2 md:pb-1'>
                         <div id='img' className='flex flex-col place-items-center justify-center ml-[10%] py-2'>
-                            <img src="https://ik.imagekit.io/padrin/711769.png?updatedAt=1705680795717" alt="" width={"200px"} />
+                            <img src="https://ik.imagekit.io/padrin/Pi/jeni.png?updatedAt=1706651820756" alt="" width={"200px"} />
                         </div>
                         <div className='flex flex-col w-full justify-around'>
                             <div className='flex flex-col justify-center items-center'>
@@ -137,15 +125,15 @@ function Sobre() {
                                 <h3>Desenvolvedora Full Stack Java</h3>
                             </div>
                             <div id='text'>
-                                <p>"texto"</p>
-                                <p>~Escritor</p>
+                                <p>"O importante não é ter muita experiência, mas ter muita sede de aprender."</p>
+                                <p>~Ada Lovelace</p>
                             </div>
                             <div id="links" className="flex flex-row items-center gap-4 text-center justify-center ">
                                 <div id='github'>
-                                    <a href=""><GithubLogo size={40} weight='regular' color='white' /></a>
+                                    <a href="https://github.com/jenifferribeiro" target='_blank'><GithubLogo size={40} weight='regular' color='white' /></a>
                                 </div>
                                 <div id='linkedin'>
-                                    <a href=""><LinkedinLogo size={40} weight='regular' color='white' /></a>
+                                    <a href="https://www.linkedin.com/in/ribeirojeniffer/" target='_blank'><LinkedinLogo size={40} weight='regular' color='white' /></a>
                                 </div>
                             </div>
                         </div>

@@ -1,25 +1,29 @@
+
 #texto p {
-    margin-left: 64px;
-    margin-right: 64px;
-    margin-bottom: 16px;
-    text-align: justify;
+    text-align: center;
 }
 
 #cards h2 {
     text-align: center;
     font-weight: bold;
-    font-size: 12.8px;
+    font-size: 13px;
+}
+
+#cards img {
+    border-radius: 50%;
 }
 
 #cards h3 {
     text-align: center;
-    font-size: 11.2px;
+    font-size: 12px;
 }
 
 #cards #text {
     text-align: center;
     margin: 15px;
-    font-size: 11.2px;
+    font-size: 12px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 #links #github {
@@ -81,20 +85,21 @@
 #lastcard h2 {
     text-align: center;
     font-weight: bold;
-    font-size: 12.8px;
+    font-size: 13px;
 }
 
 #lastcard h3 {
     text-align: center;
-    font-size: 11.2px;
+    font-size: 12px;
 }
 
 #lastcard #text {
     text-align: center;
     margin: 15px;
-    font-size: 11.2px;
+    font-size: 12px;
 }
 
-#lastcard {
-    width: 610px;
+
+#lastcard img {
+    border-radius: 50%;
 }
