@@ -79,7 +79,7 @@ function FormProduto() {
             ...produto,
             [e.target.name]: e.target.value,
             categoria: categoria,
-              });
+            });
     }
 
     function retornar() {
@@ -160,14 +160,14 @@ function FormProduto() {
                 <div className="flex flex-col gap-2">
                     <label htmlFor="preco">Preço</label>
                     <input
-                        type="text"
+                        type="number"
                         placeholder="Preco"
                         name="preco"
                         className="border-2 border-slate-700 rounded p-2"
                         value={produto.preco}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         required
-                        minLength={10}
+                        minLength={1}
                         maxLength={1000}
                         onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('O Preço é obrigatório')}
                         onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}
@@ -176,15 +176,12 @@ function FormProduto() {
                 <div className="flex flex-col gap-2">
                     <label htmlFor="foto">Foto</label>
                     <input
-                        type="foto"
+                        type="text"
                         placeholder="Foto"
                         name="foto"
                         className="border-2 border-slate-700 rounded p-2"
                         value={produto.foto}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                        required
-                        minLength={10}
-                        maxLength={1000}
                         onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}
                     />
                 </div>

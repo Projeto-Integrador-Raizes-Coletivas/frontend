@@ -1,5 +1,5 @@
 import { FolderPlus, Folders, MagnifyingGlass, SignIn, SignOut, Stack, UserPlus, UsersThree } from "@phosphor-icons/react";
-import { useContext } from "react";
+import { ReactNode, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 
@@ -8,12 +8,91 @@ function Navbar() {
 
     const navigate = useNavigate()
 
-    const { handleLogout } = useContext(AuthContext)
+    const { usuario, handleLogout } = useContext(AuthContext)
+
+    let NavbarLogado: ReactNode
+    let NavbarDeslogado: ReactNode
+    let NavbarAdmin: ReactNode
 
     function logout() {
         handleLogout()
         alert("O usuário foi desconectado com sucesso!")
         navigate("/login")
+    }
+
+    if (usuario.usuario == 'root@root.com') {
+        NavbarAdmin = (
+            <div className="flex gap-7 ml-28">
+                <Link to="/produtos" className="flex items-center gap-2 text-white font-medium">
+                    <Stack size={20} />
+                    Produtos
+                </Link>
+                <Link to="/cadastrarProduto" className="flex items-center gap-2 text-white font-medium">
+                    <FolderPlus size={20} />
+                    Criar Produto
+                </Link>
+
+                <Link to="/categorias" className="flex items-center gap-2 text-white font-medium">
+                    <Folders size={20} />
+                    Categorias
+                </Link>
+
+                <Link to="/cadastrarCategoria" className="flex items-center gap-2 text-white font-medium">
+                    <FolderPlus size={20} />
+                    Criar categoria
+                </Link>
+                <Link to="/sobre" className="flex items-center gap-2 text-white font-medium">
+                    <UsersThree size={20} />
+                    Sobre
+                </Link>
+                <div className="flex items-center gap-2 text-white font-medium cursor-pointer" onClick={logout}>
+                    <SignOut size={20} />
+                    Sair
+                </div>
+            </div>
+        )
+    } else if (usuario.token !== '') {
+        NavbarLogado = (
+            <div className="flex gap-7 ml-28">
+                <Link to="/produtos" className="flex items-center gap-2 text-white font-medium">
+                    <Stack size={20} />
+                    Produtos
+                </Link>
+                <Link to="/sobre" className="flex items-center gap-2 text-white font-medium">
+                    <UsersThree size={20} />
+                    Sobre
+                </Link>
+                <div className="flex items-center gap-2 text-white font-medium cursor-pointer" onClick={logout}>
+                    <SignOut size={20} />
+                    Sair
+                </div>
+            </div>
+        )
+    } 
+
+
+    if (usuario.token == '') {
+        NavbarDeslogado = (
+            <div className="flex gap-7 ml-28">
+                <Link to="/produtos" className="flex items-center gap-2 text-white font-medium">
+                    <Stack size={20} />
+                    Produtos
+                </Link>
+                <Link to="/sobre" className="flex items-center gap-2 text-white font-medium">
+                    <UsersThree size={20} />
+                    Sobre
+                </Link>
+                <Link to="/cadastro" className="flex items-center gap-2 text-white font-medium">
+                    <UserPlus size={20} />
+                    Cadastrar
+                </Link>
+
+                <Link to="/login" className="flex items-center gap-2 text-white font-medium">
+                    <SignIn size={20} />
+                    Login
+                </Link>
+            </div>
+        )
     }
 
     return (
@@ -26,45 +105,12 @@ function Navbar() {
                 <input type="text" placeholder="Pesquisar" className="h-11 w-full rounded-lg px-4 py-4 focus:outline-none" />
                 <MagnifyingGlass size={20} color="#356760" className="absolute right-4" />
             </div>
-
-            <div className="flex gap-7 ml-28">
-                <Link to="/produtos" className="flex items-center gap-2 text-white font-medium">
-                    <Stack size={20} />
-                    Produtos
-                </Link>
-
-                <Link to="/categorias" className="flex items-center gap-2 text-white font-medium">
-                    <Folders size={20} />
-                    Categorias
-                </Link>
-
-                <Link to="/cadastrarCategoria" className="flex items-center gap-2 text-white font-medium">
-                    <FolderPlus size={20} />
-                    Criar categoria
-                </Link>
-
-                <Link to="/sobre" className="flex items-center gap-2 text-white font-medium">
-                    <UsersThree size={20} />
-                    Sobre
-                </Link>
-
-                <Link to="/cadastro" className="flex items-center gap-2 text-white font-medium">
-                    <UserPlus size={20} />
-                    Cadastrar
-                </Link>
-
-                <Link to="/login" className="flex items-center gap-2 text-white font-medium">
-                    <SignIn size={20} />
-                    Login
-                </Link>
-
-                <div className="flex items-center gap-2 text-white font-medium cursor-pointer" onClick={logout}>
-                    <SignOut size={20} />
-                    Sair
-                </div>
-            </div>
+            {NavbarLogado}
+            {NavbarDeslogado}
+            {NavbarAdmin}
         </div>
     );
 }
+
 
 export default Navbar;

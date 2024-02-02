@@ -83,7 +83,7 @@ function FormCategoria() {
                     alert('O Token Expirou!')
                     handleLogout();
                 } else {
-                    alert('Erro ao cadastrar o tema.')
+                    alert('Erro ao cadastrar o Categoria.')
                 }
             }
         }

@@ -1,4 +1,5 @@
 import { Clock, GlobeHemisphereWest, Plant, Truck } from "@phosphor-icons/react"
+import ListaProdutos from "../../components/produto/listaProdutos/ListaProdutos";
 
 function Home() {
 
@@ -34,7 +35,9 @@ function Home() {
             </div>
 
             <div className="bg-seasalt"></div>
+            <ListaProdutos />
         </div>
+
     )
 }
 
