@@ -1,10 +1,9 @@
 import { useState, useContext, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { AuthContext } from "../../../contexts/AuthContext"
-
+import Postagem from "../../../models/Produto"
 import { buscar, deletar } from "../../../service/Service"
 import { RotatingLines } from "react-loader-spinner"
-import Produto from "../../../models/Produto"
 
 
 function DeletarProduto() {
@@ -12,7 +11,7 @@ function DeletarProduto() {
     const navigate = useNavigate()
 
     const [isLoading, setIsLoading] = useState<boolean>(false)
-    const [produto, setProduto] = useState<Produto>({} as Produto)
+    const [produto, setProduto] = useState<Postagem>({} as Postagem)
 
     const { id } = useParams<{ id: string }>()
 
@@ -21,7 +20,7 @@ function DeletarProduto() {
 
     async function buscarPorId(id: string) {
         try {
-            await buscar(`/produto/${id}`, setProduto, {
+            await buscar(`/produtos/${id}`, setProduto, {
                 headers: {
                     'Authorization': token
                 }
@@ -51,7 +50,7 @@ function DeletarProduto() {
         setIsLoading(true)
 
         try {
-            await deletar(`/produto/${id}`, {
+            await deletar(`/produtos/delete/${id}`, {
                 headers: {
                     'Authorization': token
                 }
@@ -60,7 +59,7 @@ function DeletarProduto() {
             alert('Produto apagado com sucesso')
 
         } catch (error) {
-            alert('Erro ao apagar o Produto')
+            alert('Erro ao apagar a Produto')
         }
 
         setIsLoading(false)
@@ -68,7 +67,7 @@ function DeletarProduto() {
     }
 
     function retornar() {
-        navigate("/produto")
+        navigate("/produtos")
     }
 
     return (
@@ -81,12 +80,19 @@ function DeletarProduto() {
 
             <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
                 <header
-                    className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>
+                    className='py-2 px-6 bg-verde text-white font-bold text-2xl'>
                     Produto
                 </header>
                 <div className="p-4">
                     <p className='text-xl h-full'>{produto.nome}</p>
                     <p>{produto.descricao}</p>
+                    <p>Categoria: {produto.categoria?.classificacao}</p>
+                    <p>Preço: {(produto.preco)}</p>
+                    <div className='container mx-auto mt-4 rounded-2xl overflow-hidden'>
+                        <img
+                            className='w-56 mx-auto mt-[-8rem] border-8 border-white relative z-10'
+                            src={produto.foto} alt={`Foto do produto ${produto.nome}`} />
+                    </div>
                 </div>
                 <div className="flex">
                     <button
@@ -96,8 +102,8 @@ function DeletarProduto() {
                         Não
                     </button>
                     <button
-                        className='w-full text-slate-100 bg-indigo-400 
-                        hover:bg-indigo-600 flex items-center justify-center'
+                        className='w-full text-slate-100 bg-verde-claro
+                        hover:bg-verde flex items-center justify-center'
                         onClick={deletarProduto}>
                         {isLoading ?
                             <RotatingLines
