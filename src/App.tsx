@@ -9,6 +9,7 @@ import { AuthProvider } from "./contexts/AuthContext"
 import FormCategoria from "./components/categoria/formCategoria/FormCategoria"
 import ListaCategorias from "./components/categoria/listaCategorias/ListaCategorias"
 import DeletarCategoria from "./components/categoria/deletarCategoria/DeletarCategoria"
+import ListaProdutos from "./components/produto/listaProdutos/ListaProdutos"
 import FormProduto from "./components/produto/formProduto/FormProduto"
 
 
@@ -29,8 +30,9 @@ function App() {
                             <Route path="/cadastrarCategoria" element={<FormCategoria />} />
                             <Route path="/editarCategoria/:id" element={<FormCategoria />} />
                             <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
-                            <Route path="/cadastrarProduto" element={<FormProduto />} />
-                            
+                            <Route path="/produtos" element={<ListaProdutos />} />
+                            <Route path="/cadastrarproduto" element={<FormProduto />} />
+
                         </Routes>
                     </div>
                     <Footer />

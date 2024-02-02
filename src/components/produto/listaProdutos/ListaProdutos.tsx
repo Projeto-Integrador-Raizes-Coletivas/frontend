@@ -4,6 +4,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import { buscar } from "../../../service/Service";
 import { DNA } from "react-loader-spinner";
 import Produto from "../../../models/Produto";
+import CardProduto from "../cardProduto/CardProduto";
 
 function ListaProdutos() {
 
@@ -57,7 +58,7 @@ function ListaProdutos() {
                 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'
             >
                 {produtos.map((produto) => (
-                    <CardProdutos key={produto.id} produto={produto} />
+                    <CardProduto key={produto.id} produto={produto} />
                 ))}
 
             </div>
