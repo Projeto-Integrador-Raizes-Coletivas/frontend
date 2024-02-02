@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { buscar } from "../../../service/Service";
 import { DNA } from "react-loader-spinner";
@@ -8,11 +7,10 @@ import CardProduto from "../cardProduto/CardProduto";
 
 function ListaProdutos() {
 
-    const navigate = useNavigate();
 
     const [produtos, setProdutos] = useState<Produto[]>([]);
 
-    const { usuario, handleLogout } = useContext(AuthContext);
+    const { usuario } = useContext(AuthContext);
     const token = usuario.token;
 
     async function buscarProdutos() {

@@ -124,7 +124,7 @@ function FormProduto() {
                     alert('O token expirou, favor logar novamente')
                     handleLogout()
                 } else {
-                    alert('Erro ao atualizar o Produto')
+                    alert('Erro ao cadastrar o Produto')
                 }
             }
         }
@@ -151,9 +151,9 @@ function FormProduto() {
                         value={produto.nome}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         required
-                        minLength={5}
-                        maxLength={100}
-                        onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('O Nome deve ter no mínimo 5 e no máximo 100 caracteres!')}
+                        minLength={3}
+                        maxLength={255}
+                        onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('O Nome deve ter no mínimo 3 e no máximo 255 caracteres!')}
                         onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}
                     />
                 </div>
@@ -167,8 +167,6 @@ function FormProduto() {
                         value={produto.preco}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         required
-                        minLength={1}
-                        maxLength={1000}
                         onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('O Preço é obrigatório')}
                         onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}
                     />
@@ -181,22 +179,25 @@ function FormProduto() {
                         name="foto"
                         className="border-2 border-slate-700 rounded p-2"
                         value={produto.foto}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                        minLength={3}
+                        maxLength={500}
+                        onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('O link da foto deve conter no mínimo 3 e no máximo 500 caracteres!')}
                         onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}
                     />
                 </div>
                 <div className="flex flex-col gap-2">
                     <label htmlFor="descricao">Descrição</label>
                     <input
-                        type="descricao"
+                        type="text"
                         placeholder="Descricao"
                         name="descricao"
                         className="border-2 border-slate-700 rounded p-2"
                         value={produto.descricao}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         required
-                        minLength={10}
-                        maxLength={1000}
+                        minLength={3}
+                        maxLength={500}
+                        onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('Descrição deve conter no mínimo 3 e no máximo 500 caracteres!')}
                         onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}
                     />
                 </div>
