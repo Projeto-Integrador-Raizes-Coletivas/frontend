@@ -1,12 +1,12 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import Usuario from '../../models/Usuario'
 import './Cadastro.css'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { RotatingLines } from 'react-loader-spinner'
 import { cadastrarUsuario } from '../../service/Service'
-import { toastAlerta } from '../../util/toastAlerta'
 
 function Cadastro() {
+    const logo = "/src/assets/img/raizes-logo-circle-green.png";
 
     const navigate = useNavigate()
 
@@ -54,12 +54,12 @@ function Cadastro() {
 
             try {
                 await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)
-                toastAlerta('Usuário cadastrado com sucesso!', "sucesso")
+                alert('Usuário cadastrado com sucesso!')
             } catch (error) {
-                toastAlerta('Erro ao cadastrar o usuário!', "erro")
+                alert('Erro ao cadastrar o usuário!')
             }
         } else {
-            toastAlerta('Dados estão inconsistentes. Verifique as informações do cadastro', "erro")
+            alert('Dados estão inconsistentes. Verifique as informações do cadastro')
             setUsuario({ ...usuario, senha: '' })
             setConfirmaSenha('')
         }
@@ -68,79 +68,94 @@ function Cadastro() {
     }
 
     return (
-        <>
-            <div className="grid grid-cols-1 lg:grid-cols-2 h-screen 
-            place-items-center font-bold">
-                <div className="fundoCadastro hidden lg:block"></div>
-                <form className='flex justify-center items-center flex-col w-2/3 gap-3'
+        <div className="bg-bege h-screen flex items-center justify-center">
+
+            <div className="flex items-center justify-center flex-col gap-6 bg-white w-1/2 m-auto shadow-2xl rounded-md p-8">
+
+                <Link to="/">
+                    <img src={logo} alt="Logo do Raízes Coletivas" className="max-w-36" />
+                </Link>
+
+                <form className='flex justify-center items-center flex-col w-full gap-3'
                     onSubmit={cadastrarNovoUsuario}>
-                    <h2 className='text-slate-900 text-5xl'>Cadastrar</h2>
+
+                    <h2 className='text-slate-900 text-3xl'>Cadastrar nova conta</h2>
+
                     <div className="flex flex-col w-full">
-                        <label htmlFor="nome">Nome</label>
+                        <label htmlFor="nome">Nome:</label>
                         <input
                             type="text"
                             id="nome"
                             name="nome"
-                            placeholder="Nome"
-                            className="border-2 border-slate-700 rounded p-2"
+                            placeholder="Seu nome completo"
+                            className="border-2 border-slate-300 rounded p-2 outline-none focus:border-verde focus:border-2"
                             value={usuario.nome}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
+
                     <div className="flex flex-col w-full">
-                        <label htmlFor="usuario">Usuario</label>
+                        <label htmlFor="usuario">Usuário:</label>
                         <input
                             type="text"
                             id="usuario"
                             name="usuario"
-                            placeholder="Usuario"
-                            className="border-2 border-slate-700 rounded p-2"
+                            placeholder="Digite seu e-mail"
+                            className="border-2 border-slate-300 rounded p-2 outline-none focus:border-verde focus:border-2"
                             value={usuario.usuario}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
+
                     <div className="flex flex-col w-full">
-                        <label htmlFor="foto">Foto</label>
+                        <label htmlFor="foto">Foto:</label>
                         <input
                             type="text"
                             id="foto"
                             name="foto"
-                            placeholder="Foto"
-                            className="border-2 border-slate-700 rounded p-2"
+                            placeholder="Link da sua foto"
+                            className="border-2 border-slate-300 rounded p-2 outline-none focus:border-verde focus:border-2"
                             value={usuario.foto}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
+
                     <div className="flex flex-col w-full">
-                        <label htmlFor="senha">Senha</label>
+                        <label htmlFor="senha">Senha:</label>
                         <input
                             type="password"
                             id="senha"
                             name="senha"
-                            placeholder="Senha"
-                            className="border-2 border-slate-700 rounded p-2"
+                            placeholder="Digite uma senha"
+                            className="border-2 border-slate-300 rounded p-2 outline-none focus:border-verde focus:border-2"
                             value={usuario.senha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
+
                     <div className="flex flex-col w-full">
-                        <label htmlFor="confirmarSenha">Confirmar Senha</label>
+                        <label htmlFor="confirmarSenha">Confirmar senha:</label>
                         <input
                             type="password"
                             id="confirmarSenha"
                             name="confirmarSenha"
-                            placeholder="Confirmar Senha"
-                            className="border-2 border-slate-700 rounded p-2"
+                            placeholder="Confirme sua senha"
+                            className="border-2 border-slate-300 rounded p-2 outline-none focus:border-verde focus:border-2"
                             value={confirmaSenha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
                         />
                     </div>
+
                     <div className="flex justify-around w-full gap-8">
+                        <button className='rounded text-white bg-red-700 hover:bg-red-500 w-1/2 py-2 transition delay-75 font-bold' onClick={retornar}>
+                            Cancelar
+                        </button>
+
                         <button
                             type='submit'
                             className='rounded text-white bg-verde 
                             hover:bg-verde-claro w-1/2 py-2
-                           flex justify-center'
+                           flex justify-center transition delay-75 hover:text-verde font-bold'
                         >
                             {isLoading ? <RotatingLines
                                 strokeColor="white"
@@ -152,14 +167,10 @@ function Cadastro() {
                                 <span>Cadastrar</span>
                             }
                         </button>
-
-                        <button className='rounded text-white bg-red-400 hover:bg-red-700 w-1/2 py-2' onClick={retornar}>
-                            Cancelar
-                        </button>
                     </div>
                 </form>
             </div>
-        </>
+        </div>
     )
 }
 

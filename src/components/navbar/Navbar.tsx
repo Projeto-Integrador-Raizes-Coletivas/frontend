@@ -7,6 +7,9 @@ import { toastAlerta } from "../../util/toastAlerta";
 function Navbar() {
     const logo = "/src/assets/img/raizes-logo-inline.png";
 
+    const isLogin = location.pathname === '/login';
+    const isCadastro = location.pathname === '/cadastro';
+
     const navigate = useNavigate()
 
     const { usuario, handleLogout } = useContext(AuthContext)
@@ -65,7 +68,7 @@ function Navbar() {
                     <UsersThree size={20} />
                     Sobre
                 </Link>
-                  <Link to='/cart' className="flex items-center gap-2 text-white font-medium">
+                <Link to='/cart' className="flex items-center gap-2 text-white font-medium">
                     <ShoppingCart size={25} weight='bold' /></Link>
                 <div className="flex items-center gap-2 text-white font-medium cursor-pointer" onClick={logout}>
                     <SignOut size={20} />
@@ -73,7 +76,7 @@ function Navbar() {
                 </div>
             </div>
         )
-    } 
+    }
 
 
     if (usuario.token == '') {
@@ -101,6 +104,9 @@ function Navbar() {
             </div>
         )
     }
+
+    if (isLogin || isCadastro)
+        return null;
 
     return (
         <div className="flex items-center bg-verde h-[68px] px-24 py-2">

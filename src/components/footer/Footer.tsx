@@ -2,6 +2,12 @@ import { EnvelopeSimple, FacebookLogo, GithubLogo, InstagramLogo, LinkedinLogo, 
 import { Link } from "react-router-dom";
 
 function Footer() {
+    const isLogin = location.pathname === '/login';
+    const isCadastro = location.pathname === '/cadastro';
+
+    if (isLogin || isCadastro)
+        return null;
+
     return (
         <>
             <div className="flex justify-center bg-verde text-bege h-48">
