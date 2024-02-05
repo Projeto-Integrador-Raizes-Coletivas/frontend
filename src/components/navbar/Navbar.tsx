@@ -1,4 +1,4 @@
-import { FolderPlus, Folders, MagnifyingGlass, SignIn, SignOut, Stack, UserPlus, UsersThree } from "@phosphor-icons/react";
+import { FolderPlus, Folders, MagnifyingGlass, ShoppingCart, SignIn, SignOut, Stack, UserPlus, UsersThree } from "@phosphor-icons/react";
 import { ReactNode, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -45,6 +45,8 @@ function Navbar() {
                     <UsersThree size={20} />
                     Sobre
                 </Link>
+                <Link to='/cart' className="flex items-center gap-2 text-white font-medium">
+                    <ShoppingCart size={25} weight='bold' /></Link>
                 <div className="flex items-center gap-2 text-white font-medium cursor-pointer" onClick={logout}>
                     <SignOut size={20} />
                     Sair
@@ -62,6 +64,8 @@ function Navbar() {
                     <UsersThree size={20} />
                     Sobre
                 </Link>
+                  <Link to='/cart' className="flex items-center gap-2 text-white font-medium">
+                    <ShoppingCart size={25} weight='bold' /></Link>
                 <div className="flex items-center gap-2 text-white font-medium cursor-pointer" onClick={logout}>
                     <SignOut size={20} />
                     Sair
@@ -91,6 +95,8 @@ function Navbar() {
                     <SignIn size={20} />
                     Login
                 </Link>
+                <Link to='/cart' className="flex items-center gap-2 text-white font-medium">
+                    <ShoppingCart size={25} weight='bold' /></Link>
             </div>
         )
     }
