@@ -14,13 +14,17 @@ import FormProduto from "./components/produto/formProduto/FormProduto"
 import DeletarProduto from "./components/produto/deletarProduto/DeletarProduto"
 import Cart from "./components/cart/Cart"
 import { CartProvider } from "./contexts/CartContext"
+import { ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
 
 
 function App() {
     return (
         <>
+        
          <CartProvider>
-            <AuthProvider>
+            <AuthProvider>   
+            <ToastContainer />         
                 <BrowserRouter >
                     <Navbar />
                     <div className='min-h-[80vh]'>
