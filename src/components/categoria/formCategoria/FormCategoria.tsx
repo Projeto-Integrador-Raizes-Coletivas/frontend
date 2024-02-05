@@ -4,6 +4,7 @@ import Categoria from "../../../models/Categoria";
 import { atualizar, buscar, cadastrar } from "../../../service/Service";
 import { RotatingLines } from "react-loader-spinner";
 import { AuthContext } from "../../../contexts/AuthContext";
+import { toastAlerta } from "../../../util/toastAlerta";
 
 function FormCategoria() {
 
@@ -24,14 +25,14 @@ function FormCategoria() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('O token Expirou!')
+                toastAlerta('O token Expirou!', "info")
                 handleLogout()
             }
         }
     }
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado!')
+            toastAlerta('Você precisa estar logado!', "info")
             navigate('/')
         }
     }, [token])
@@ -62,13 +63,13 @@ function FormCategoria() {
                 await atualizar(`/categorias`, categoria, setCategoria, {
                     headers: { 'Authorization': token }
                 })
-                alert('A categoria foi atualizada com sucesso!')
+                toastAlerta('A categoria foi atualizada com sucesso!', "sucesso")
             } catch (error: any) {
                 if (error.toString().includes('403')) {
-                    alert('O Token Expirou!')
+                    toastAlerta('O Token Expirou!', "erro")
                     handleLogout();
                 } else {
-                    alert('Erro ao atualizar a categoria.')
+                    toastAlerta('Erro ao atualizar a categoria.', "erro")
                 }
             }
 
@@ -77,13 +78,13 @@ function FormCategoria() {
                 await cadastrar(`/categorias`, categoria, setCategoria, {
                     headers: { 'Authorization': token }
                 })
-                alert('A categoria foi cadastrada com sucesso!')
+                toastAlerta('A categoria foi cadastrada com sucesso!', "sucesso")
             } catch (error: any) {
                 if (error.toString().includes('403')) {
-                    alert('O Token Expirou!')
+                    toastAlerta('O Token Expirou!',"info")
                     handleLogout();
                 } else {
-                    alert('Erro ao cadastrar o Categoria.')
+                    toastAlerta('Erro ao cadastrar o Categoria.', "erro")
                 }
             }
         }

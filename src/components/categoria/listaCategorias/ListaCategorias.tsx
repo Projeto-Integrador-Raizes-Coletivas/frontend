@@ -5,6 +5,7 @@ import { DNA } from "react-loader-spinner"
 import CardCategoria from "../cardCategoria/CardCategoria"
 import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../../../contexts/AuthContext"
+import { toastAlerta } from "../../../util/toastAlerta"
 
 function ListaCategorias() {
 
@@ -23,7 +24,7 @@ function ListaCategorias() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('O token Expirou!')
+                toastAlerta('O token Expirou!', "info")
                 handleLogout()
             }
         }
@@ -31,7 +32,7 @@ function ListaCategorias() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado!')
+            toastAlerta('Você precisa estar logado!',"info")
             navigate('/')
         }
     }, [token])

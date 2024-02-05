@@ -2,6 +2,7 @@ import { FolderPlus, Folders, MagnifyingGlass, ShoppingCart, SignIn, SignOut, St
 import { ReactNode, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
+import { toastAlerta } from "../../util/toastAlerta";
 
 function Navbar() {
     const logo = "/src/assets/img/raizes-logo-inline.png";
@@ -16,7 +17,7 @@ function Navbar() {
 
     function logout() {
         handleLogout()
-        alert("O usuário foi desconectado com sucesso!")
+        toastAlerta("O usuário foi desconectado com sucesso!", "sucesso")
         navigate("/login")
     }
 
