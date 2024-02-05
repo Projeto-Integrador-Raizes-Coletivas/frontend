@@ -20,11 +20,9 @@ import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
     return (
-        <>
-        
-         <CartProvider>
-            <AuthProvider>   
-            <ToastContainer />         
+        <CartProvider>
+            <AuthProvider>
+                <ToastContainer />
                 <BrowserRouter >
                     <Navbar />
                     <div className='min-h-[80vh]'>
@@ -43,14 +41,12 @@ function App() {
                             <Route path="/editarProduto/:id" element={<FormProduto />} />
                             <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
                             <Route path="/cart" element={<Cart />} />
-
                         </Routes>
                     </div>
                     <Footer />
                 </BrowserRouter>
             </AuthProvider>
-            </CartProvider>
-        </>
+        </CartProvider>
     )
 }
 
