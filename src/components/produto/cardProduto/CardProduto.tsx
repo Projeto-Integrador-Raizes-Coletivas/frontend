@@ -2,6 +2,7 @@ import { Link} from 'react-router-dom'
 import Produto from '../../../models/Produto'
 import { ReactNode, useContext } from 'react'
 import { AuthContext } from '../../../contexts/AuthContext'
+import { CartContext } from '../../../contexts/CartContext'
 
 interface CardProdutoProps {
     produto: Produto
@@ -10,6 +11,8 @@ interface CardProdutoProps {
 function CardProduto({ produto }: CardProdutoProps) {
     
     const { usuario } = useContext(AuthContext)
+
+    const { adicionarProduto } = useContext(CartContext)
 
     let BotaoLogado: ReactNode
     let BotaoDeslogado: ReactNode
@@ -72,10 +75,15 @@ function CardProduto({ produto }: CardProdutoProps) {
                     </div>
                 </div>
                 <div className="flex">
-                    <Link to={`/comprarProduto/${produto.id}`}
+                    <Link to={`/cart`}
                         className='w-full text-white bg-verde-claro 
                     hover:bg-verde flex items-center justify-center py-2'>
-                        <button>Comprar</button>
+                         <button className='w-full text-white bg-teal-500 
+                           hover:bg-teal-900 flex items-center 
+                           justify-center py-2'
+                            onClick={() => adicionarProduto(produto)}>
+                             Comprar
+                        </button>
                     </Link>
                 </div>
             </div>
@@ -106,7 +114,12 @@ function CardProduto({ produto }: CardProdutoProps) {
                     <Link to={`/login `}
                         className='w-full text-white bg-verde-claro 
                             hover:bg-verde flex items-center justify-center py-2'>
-                        <button>Comprar</button>
+                        <button className='w-full text-white bg-teal-500 
+                           hover:bg-teal-900 flex items-center 
+                           justify-center py-2'
+                            onClick={() => adicionarProduto(produto)}>
+                             Comprar
+                        </button>
                     </Link>
                 </div>
             </div>

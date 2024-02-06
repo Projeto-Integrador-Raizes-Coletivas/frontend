@@ -4,6 +4,7 @@ import { AuthContext } from "../../../contexts/AuthContext"
 import Postagem from "../../../models/Produto"
 import { buscar, deletar } from "../../../service/Service"
 import { RotatingLines } from "react-loader-spinner"
+import { toastAlerta } from "../../../util/toastAlerta"
 
 
 function DeletarProduto() {
@@ -27,7 +28,7 @@ function DeletarProduto() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('O token expirou, favor logar novamente')
+                toastAlerta('O token expirou, favor logar novamente', "info")
                 handleLogout()
             }
         }
@@ -35,7 +36,7 @@ function DeletarProduto() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            toastAlerta('Você precisa estar logado', "info")
             navigate('/')
         }
     }, [token])
@@ -56,10 +57,10 @@ function DeletarProduto() {
                 }
             })
 
-            alert('Produto apagado com sucesso')
+            toastAlerta('Produto apagado com sucesso', "sucesso")
 
         } catch (error) {
-            alert('Erro ao apagar a Produto')
+            toastAlerta('Erro ao apagar a Produto', "erro")
         }
 
         setIsLoading(false)

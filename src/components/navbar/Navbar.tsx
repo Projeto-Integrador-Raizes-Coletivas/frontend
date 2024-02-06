@@ -1,10 +1,14 @@
-import { FolderPlus, Folders, MagnifyingGlass, SignIn, SignOut, Stack, UserPlus, UsersThree } from "@phosphor-icons/react";
+import { FolderPlus, Folders, MagnifyingGlass, ShoppingCart, SignIn, SignOut, Stack, UserPlus, UsersThree } from "@phosphor-icons/react";
 import { ReactNode, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
+import { toastAlerta } from "../../util/toastAlerta";
 
 function Navbar() {
     const logo = "/src/assets/img/raizes-logo-inline.png";
+
+    const isLogin = location.pathname === '/login';
+    const isCadastro = location.pathname === '/cadastro';
 
     const navigate = useNavigate()
 
@@ -16,7 +20,7 @@ function Navbar() {
 
     function logout() {
         handleLogout()
-        alert("O usuário foi desconectado com sucesso!")
+        toastAlerta("O usuário foi desconectado com sucesso!", "sucesso")
         navigate("/login")
     }
 
@@ -45,6 +49,8 @@ function Navbar() {
                     <UsersThree size={20} />
                     Sobre
                 </Link>
+                <Link to='/cart' className="flex items-center gap-2 text-white font-medium">
+                    <ShoppingCart size={25} weight='bold' /></Link>
                 <div className="flex items-center gap-2 text-white font-medium cursor-pointer" onClick={logout}>
                     <SignOut size={20} />
                     Sair
@@ -62,13 +68,15 @@ function Navbar() {
                     <UsersThree size={20} />
                     Sobre
                 </Link>
+                <Link to='/cart' className="flex items-center gap-2 text-white font-medium">
+                    <ShoppingCart size={25} weight='bold' /></Link>
                 <div className="flex items-center gap-2 text-white font-medium cursor-pointer" onClick={logout}>
                     <SignOut size={20} />
                     Sair
                 </div>
             </div>
         )
-    } 
+    }
 
 
     if (usuario.token == '') {
@@ -91,9 +99,14 @@ function Navbar() {
                     <SignIn size={20} />
                     Login
                 </Link>
+                <Link to='/cart' className="flex items-center gap-2 text-white font-medium">
+                    <ShoppingCart size={25} weight='bold' /></Link>
             </div>
         )
     }
+
+    if (isLogin || isCadastro)
+        return null;
 
     return (
         <div className="flex items-center bg-verde h-[68px] px-24 py-2">

@@ -12,12 +12,17 @@ import DeletarCategoria from "./components/categoria/deletarCategoria/DeletarCat
 import ListaProdutos from "./components/produto/listaProdutos/ListaProdutos"
 import FormProduto from "./components/produto/formProduto/FormProduto"
 import DeletarProduto from "./components/produto/deletarProduto/DeletarProduto"
+import Cart from "./components/cart/Cart"
+import { CartProvider } from "./contexts/CartContext"
+import { ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
 
 
 function App() {
     return (
-        <>
+        <CartProvider>
             <AuthProvider>
+                <ToastContainer />
                 <BrowserRouter >
                     <Navbar />
                     <div className='min-h-[80vh]'>
@@ -35,13 +40,13 @@ function App() {
                             <Route path="/cadastrarProduto" element={<FormProduto />} />
                             <Route path="/editarProduto/:id" element={<FormProduto />} />
                             <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
-
+                            <Route path="/cart" element={<Cart />} />
                         </Routes>
                     </div>
                     <Footer />
                 </BrowserRouter>
             </AuthProvider>
-        </>
+        </CartProvider>
     )
 }
 

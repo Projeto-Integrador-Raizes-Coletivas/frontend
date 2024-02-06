@@ -1,5 +1,7 @@
 import { Clock, GlobeHemisphereWest, Plant, Truck } from "@phosphor-icons/react"
+import Carrossel from "../../components/carrossel/Carrossel";
 import ListaProdutos from "../../components/produto/listaProdutos/ListaProdutos";
+
 
 function Home() {
 
@@ -11,9 +13,8 @@ function Home() {
     ];
 
     return (
-        <div>
-            <div className="px-32 py-36 bg-verde-claro text-5xl	font-bold text-white">
-            </div>
+        <>
+            <Carrossel />
 
             <div className="bg-bege flex flex-row justify-center gap-x-20 p-2 text-sm">
                 <div className="flex gap-x-2 p-2 items-center">
@@ -34,10 +35,8 @@ function Home() {
                 </div>
             </div>
 
-            <div className="bg-seasalt"></div>
             <ListaProdutos />
-        </div>
-
+        </>
     )
 }
 

@@ -4,6 +4,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import Categoria from "../../../models/Categoria";
 import { buscar, deletar } from "../../../service/Service";
 import { RotatingLines } from "react-loader-spinner";
+import { toastAlerta } from "../../../util/toastAlerta";
 
 
 function DeletarCategoria() {
@@ -25,7 +26,7 @@ function DeletarCategoria() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('O token Expirou!')
+                toastAlerta('O token Expirou!', "info")
                 handleLogout()
             }
         }
@@ -33,7 +34,7 @@ function DeletarCategoria() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado!')
+            toastAlerta('Você precisa estar logado!', "info")
             navigate('/')
         }
     }, [token])
@@ -56,13 +57,13 @@ function DeletarCategoria() {
             await deletar(`/categorias/${id}`, {
                 headers: { 'Authorization': token }
             })
-            alert('A categoria foi excluída com sucesso!')
+            toastAlerta('A categoria foi excluída com sucesso!', "sucesso")
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('O Token Expirou!')
+                toastAlerta('O Token Expirou!', "info")
                 handleLogout();
             } else {
-                alert('Erro ao excluir a categoria.')
+                toastAlerta('Erro ao excluir a categoria.', "erro")
             }
 
         }
