@@ -23,7 +23,6 @@ function CardCategoria({ categoria }: CardCategoriaProps) {
             <div className="center">
                 <div className="article-card">
                     <div className="content">
-                        <p className="data">Jan 1, 2022</p>
                         <p className="id">Categoria #{categoria.id}</p>
                         <p className="nome">{categoria.nome}</p>
                         <p className="classificacao">{categoria.classificacao}</p>
@@ -44,7 +43,6 @@ function CardCategoria({ categoria }: CardCategoriaProps) {
             <div className="center">
                 <div className="article-card" >
                     <div className="content">
-                        <p className="data">Jan 1, 2022</p>
                         <p className="id">Categoria #{categoria.id}</p>
                         <p className="nome">{categoria.nome}</p>
                         <p className="classificacao">{categoria.classificacao}</p>

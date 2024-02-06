@@ -108,6 +108,8 @@ function FormCategoria() {
                             value={categoria.nome}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                             required
+                            maxLength={255}
+                            minLength={3}
                             onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('Digite uma nome categoria válida!')}
                             onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}
                         />
@@ -136,10 +138,12 @@ function FormCategoria() {
                             value={categoria.foto}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                             required
+                            maxLength={500}
+                            minLength={3}
                             onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('Insira uma imagem valida')}
                             onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}
                         />
-                        <label htmlFor="foto" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Foto</label>
+                        <label htmlFor="foto" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Link da foto</label>
                     </div>
 
                     <button id="button" className="text-white bg-verde hover:bg-verde-claro font-medium rounded text-sm w-full py-3 text-center transition delay-75 hover:text-verde flex items-center justify-center object-center hover:font-semibold"

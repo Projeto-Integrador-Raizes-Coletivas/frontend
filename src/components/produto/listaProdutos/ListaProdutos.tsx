@@ -14,12 +14,12 @@ function ListaProdutos() {
     const token = usuario.token;
 
     async function buscarProdutos() {
-            await buscar('/produtos/all', setProdutos, {
-                headers: {
-                    Authorization: token,
-                },
-            })
-        }
+        await buscar('/produtos/all', setProdutos, {
+            headers: {
+                Authorization: token,
+            },
+        })
+    }
 
     useEffect(() => {
         buscarProdutos()
@@ -38,7 +38,7 @@ function ListaProdutos() {
                 />
             )}
             <div className='container mx-auto my-4 
-                grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4'
+                grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-6 gap-4 justify-center items-center object-center'
             >
                 {produtos.map((produto) => (
                     <CardProduto key={produto.id} produto={produto} />

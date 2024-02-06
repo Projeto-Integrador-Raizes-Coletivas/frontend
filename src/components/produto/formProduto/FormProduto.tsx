@@ -186,7 +186,7 @@ function FormProduto() {
                             onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('O link da foto deve conter no mínimo 3 e no máximo 500 caracteres!')}
                             onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}
                         />
-                        <label htmlFor="foto" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Foto</label>
+                        <label htmlFor="foto" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Link da foto</label>
                     </div>
                     <div className="relative z-0 w-full mb-5">
                         <input

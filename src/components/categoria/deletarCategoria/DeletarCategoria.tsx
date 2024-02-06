@@ -80,12 +80,11 @@ function DeletarCategoria() {
                 <div className="center">
                     <div className="article-card">
                         <div className="content">
-                            <p className="data">Jan 1, 2022</p>
                             <p className="id">Categoria #{categoria.id}</p>
                             <p className="nome">{categoria.nome}</p>
                             <p className="classificacao">{categoria.classificacao}</p>
                         </div>
-                        <img src="https://www.portaldojardim.com/pdj/wp-content/uploads/lemon-1117565_1280.jpg" alt="article-cover" className="FOTO" />
+                        <img src={categoria.foto} alt={`Foto do produto ${categoria.nome}`} className="FOTO" />
                     </div>
                 </div>
                 <div className="relative flex gap-5 overflow-hidden pt-6 justify-center">
