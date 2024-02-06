@@ -49,6 +49,7 @@ function Navbar() {
                     <UsersThree size={20} />
                     Sobre
                 </Link>
+                <Link to='/conta' className="flex items-center gap-2 text-white font-medium">Conta</Link>
                 <Link to='/cart' className="flex items-center gap-2 text-white font-medium">
                     <ShoppingCart size={25} weight='bold' /></Link>
                 <div className="flex items-center gap-2 text-white font-medium cursor-pointer" onClick={logout}>
@@ -68,6 +69,7 @@ function Navbar() {
                     <UsersThree size={20} />
                     Sobre
                 </Link>
+                <Link to='/conta' className="flex items-center gap-2 text-white font-medium">Conta</Link>
                 <Link to='/cart' className="flex items-center gap-2 text-white font-medium">
                     <ShoppingCart size={25} weight='bold' /></Link>
                 <div className="flex items-center gap-2 text-white font-medium cursor-pointer" onClick={logout}>
