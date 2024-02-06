@@ -4,6 +4,7 @@ import Categoria from "../../../models/Categoria";
 import { atualizar, buscar, cadastrar } from "../../../service/Service";
 import { RotatingLines } from "react-loader-spinner";
 import { AuthContext } from "../../../contexts/AuthContext";
+import "./FormCategoria.css"
 
 function FormCategoria() {
 
@@ -93,59 +94,72 @@ function FormCategoria() {
     }
 
     return (
-        <div className="container flex flex-col items-center justify-center mx-auto">
-            <h1 className="text-4xl text-center my-8  font-bold">
-                {id === undefined ? 'Cadastrar Categoria' : 'Editar Categoria'}
-            </h1>
+        <div className="flex justify-center items-center min-h-[80vh]">
+            <div className="mx-auto max-w-md px-6 py-8 bg-white border-0 shadow-lg sm:rounded-3xl w-[60%]">
+                <h1 className="text-2xl font-bold mb-8"> {id === undefined ? 'Cadastrar Categoria' : 'Editar Categoria'} </h1>
+                <form id="form" className="" onSubmit={gerarNovaCategoria}>
+                    <div className="relative z-0 w-full mb-5">
+                        <input
+                            type="text"
+                            placeholder=""
+                            name='nome'
+                            className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
+                            value={categoria.nome}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                            required
+                            onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('Digite uma nome categoria válida!')}
+                            onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}
+                        />
+                        <label htmlFor="nome" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Nome da Categoria</label>
+                    </div>
+                    <div className="relative z-0 w-full mb-5">
 
-            <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="nome" className=" font-bold">Nome da Categoria</label>
-                    <input
-                        type="text"
-                        placeholder="Descreva aqui sua categoria"
-                        name='nome'
-                        className="border-2 border-slate-400 rounded p-2"
-                        value={categoria.nome}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                        required
-                        onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('Digite uma categoria válida!')}
-                        onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}
-                    />
-                </div>
-                <div className="flex flex-col gap-2">
-                    <label htmlFor="classificacao" className=" font-bold">Classificação da Categoria</label>
-                    <input
-                        type="text"
-                        placeholder="Descreva aqui sua categoria"
-                        name='classificacao'
-                        className="border-2 border-slate-400 rounded p-2"
-                        value={categoria.classificacao}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                        required
-                        onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('Digite uma Classificação válida!')}
-                        onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}
-                    />
-                </div>
-                <button
-                    className="rounded font-bold bg-slate-400 hover:bg-slate-600
-                    w-1/2 py-2 mx-auto flex justify-center"
-                    type="submit">
+                        <input
+                            type="text"
+                            placeholder=""
+                            name='classificacao'
+                            className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
+                            value={categoria.classificacao}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                            required
+                            onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('Digite uma Classificação válida!')}
+                            onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}
+                        />
+                        <label htmlFor="classificacao" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Classificação</label>
+                    </div>
+                    <div className="relative z-0 w-full mb-5">
 
-                    {isLoading ?
-                        <RotatingLines
-                            strokeColor="white"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="24"
-                            visible={true}
-                        /> :
-                        <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
+                        <input
+                            type="text"
+                            placeholder=""
+                            name='classificacao'
+                            className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
+                            value={categoria.classificacao}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                            required
+                            onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('Digite uma Classificação válida!')}
+                            onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}
+                        />
+                        <label htmlFor="classificacao" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Foto</label>
+                    </div>
 
-                    }
-
-                </button>
-            </form>
+                    <button id="button" className="text-white bg-verde hover:bg-verde-claro font-medium rounded text-sm w-full py-3 text-center transition delay-75 hover:text-verde flex items-center justify-center object-center hover:font-semibold"
+                        type="submit">
+                        {isLoading ?
+                            <RotatingLines
+                                strokeColor="white"
+                                strokeWidth="5"
+                                animationDuration="0.75"
+                                width="24"
+                                visible={true}
+                            /> :
+                            <span>
+                                {id === undefined ? 'Cadastrar' : 'Atualizar'}
+                            </span>
+                        }
+                    </button>
+                </form>
+            </div>
         </div>
     );
 }

@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom"
 import Categoria from "../../../models/Categoria"
+import "./CardCategoria.css"
+import { Pencil, Trash } from "@phosphor-icons/react"
 
 
 interface CardCategoriaProps {
@@ -8,17 +10,22 @@ interface CardCategoriaProps {
 
 function CardCategoria({ categoria }: CardCategoriaProps) {
     return (
-        <div className="border flex flex-col rounded-2xl overflow-hidden justify-between">
-            <header className="py-2 px-6 bg-verde text-white font-bold text-2xl">Categoria {categoria.id}</header>
-            <p className="p-8 text-3xl bg-slate-200 h-full text-center font-bold">{categoria.nome}</p>
-            <p className="p-8 text-3xl bg-slate-200 h-full text-center font-bold">{categoria.classificacao}</p>
-            <div className="flex">
-                <Link to={`/editarCategoria/${categoria.id}`} className="text-white bg-verde-claro hover:bg-verde font-bold w-full flex items-center justify-center py-2">
-                    <button>Editar</button>
-                </Link>
-                <Link to={`/deletarCategoria/${categoria.id}`} className="text-slate-100 bg-red-400 hover:bg-red-500 font-bold w-full flex items-center justify-center">
-                    <button>Deletar</button>
-                </Link>
+        <div className="center">
+            <div className="article-card">
+                <div className="content">
+                    <p className="data">Jan 1, 2022</p>
+                    <p className="id">Categoria #{categoria.id}</p>
+                    <p className="nome">{categoria.nome}</p>
+                    <p className="classificacao">{categoria.classificacao}</p>
+                    <Link to={`/editarCategoria/${categoria.id}`}>
+                    <button className="text-white bg-green-500 hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-500 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 bottom-[55px] absolute right-2"><Pencil size={20} /></button>
+                    </Link>
+                    <Link to={`/deletarCategoria/${categoria.id}`}>
+                    <button className="text-white bg-red-500 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-700 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 bottom-2 absolute right-2"><Trash size={20} /></button>
+                    </Link>
+                </div>
+                <img src="https://www.portaldojardim.com/pdj/wp-content/uploads/lemon-1117565_1280.jpg" alt="article-cover" className="FOTO" />
+
             </div>
         </div>
     )

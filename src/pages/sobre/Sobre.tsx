@@ -44,7 +44,7 @@ function Sobre() {
                     <div id='card' className='grid grid-cols-[1fr_2fr] border-solid rounded-3xl shadow-lg hover:shadow-verde bg-white
                     hover:scale-105 delay-50 duration-700 pb-2 md:pb-1'>
                         <div id='img' className='flex flex-col place-items-center justify-center ml-[10%] py-2 '>
-                            <img src="https://ik.imagekit.io/padrin/Pi/Design%20sem%20nome.png?updatedAt=1706648705660" alt="" width={"200px"} />
+                            <img src="https://ik.imagekit.io/padrin/Pi/Eu.png?updatedAt=1706652222241" alt="" width={"200px"} />
                         </div>
                         <div className='flex flex-col w-full justify-around'>
                             <div className='flex flex-col justify-center items-center'>

@@ -20,7 +20,7 @@ function DeletarCategoria() {
 
     async function buscarPorId(id: string) {
         try {
-            await buscar(`/categorias/${id}`,setCategoria, {
+            await buscar(`/categorias/${id}`, setCategoria, {
                 headers: { Authorization: token }
             })
         } catch (error: any) {
@@ -72,36 +72,40 @@ function DeletarCategoria() {
     }
 
     return (
-        <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'> Deletar Categoria</h1>
-            <p className='text-center font-semibold mb-4'> Você tem certeza de que deseja apagar a categoria a seguir?</p>     
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                <header
-                    className='py-2 px-6 bg-verde text-white font-bold text-2xl'>
-                    Categoria
-                </header>
-                <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.nome}</p>
-                <div className="flex">
+        <div className="flex justify-center items-center min-h-[80vh]">
+            <div className='mx-auto max-w-md px-6 py-8 bg-white border-0 shadow-lg sm:rounded-3xl w-[60%]'>
+                <h1 className='text-4xl font-medium text-center my-4'> Deletar Categoria</h1>
+                <p className='text-center font-medium mb-4'> Tem certeza de que deseja apagar a categoria a seguir?</p>
+                <div className="center">
+                    <div className="article-card">
+                        <div className="content">
+                            <p className="data">Jan 1, 2022</p>
+                            <p className="id">Categoria #{categoria.id}</p>
+                            <p className="nome">{categoria.nome}</p>
+                            <p className="classificacao">{categoria.classificacao}</p>
+                        </div>
+                        <img src="https://www.portaldojardim.com/pdj/wp-content/uploads/lemon-1117565_1280.jpg" alt="article-cover" className="FOTO" />
+                    </div>
+                </div>
+                <div className="relative flex gap-5 overflow-hidden pt-6 justify-center">
                     <button
-                        className='text-slate-100 bg-verde-claro hover:bg-verde w-full py-2'
-                        onClick={retornar}>
-                        Não
+                        className='text-white bg-verde hover:bg-verde-claro font-medium
+                         rounded-xl text-sm w-1/3 py-3 text-center transition delay-75 hover:text-verde flex items-center justify-center object-center hover:font-medium'
+                        onClick={deletarCategoria}>
+                        {isLoading ?
+                            <RotatingLines
+                                strokeColor="white"
+                                strokeWidth="5"
+                                animationDuration="0.75"
+                                width="24"
+                                visible={true}
+                            /> :
+                            <span className="relative">Sim</span>
+                        }
                     </button>
-                    <button
-                        className='w-full text-slate-100 bg-red-400
-                                   hover:bg-red-500 flex items-center justify-center'
-                                   onClick={deletarCategoria}>
-                         {isLoading ?
-                        <RotatingLines
-                            strokeColor="white"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="24"
-                            visible={true}
-                        /> :
-                        <span>Sim</span>
-                        
-                    }
+                    <button className="text-white bg-red-500 hover:bg-red-700 font-medium
+                         rounded-xl text-sm w-1/3 py-3 text-center transition delay-75 flex items-center justify-center object-center hover:font-medium" onClick={retornar}>
+                        <span className="relative">Cancelar</span>
                     </button>
                 </div>
             </div>
