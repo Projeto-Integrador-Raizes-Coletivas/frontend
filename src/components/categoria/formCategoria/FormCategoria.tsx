@@ -5,6 +5,7 @@ import { atualizar, buscar, cadastrar } from "../../../service/Service";
 import { RotatingLines } from "react-loader-spinner";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { toastAlerta } from "../../../util/toastAlerta";
+import "./FormCategoria.css"
 
 function FormCategoria() {
 
@@ -81,7 +82,7 @@ function FormCategoria() {
                 toastAlerta('A categoria foi cadastrada com sucesso!', "sucesso")
             } catch (error: any) {
                 if (error.toString().includes('403')) {
-                    toastAlerta('O Token Expirou!',"info")
+                    toastAlerta('O Token Expirou!', "info")
                     handleLogout();
                 } else {
                     toastAlerta('Erro ao cadastrar o Categoria.', "erro")
@@ -121,8 +122,6 @@ function FormCategoria() {
                             className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
                             value={categoria.classificacao}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                            required
-                            onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('Digite uma Classificação válida!')}
                             onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}
                         />
                         <label htmlFor="classificacao" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Classificação</label>
@@ -132,15 +131,15 @@ function FormCategoria() {
                         <input
                             type="text"
                             placeholder=""
-                            name='classificacao'
+                            name='foto'
                             className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200"
-                            value={categoria.classificacao}
+                            value={categoria.foto}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                             required
-                            onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('Digite uma Classificação válida!')}
+                            onInvalid={e => (e.target as HTMLInputElement).setCustomValidity('Insira uma imagem valida')}
                             onInput={e => (e.target as HTMLInputElement).setCustomValidity('')}
                         />
-                        <label htmlFor="classificacao" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Foto</label>
+                        <label htmlFor="foto" className="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Foto</label>
                     </div>
 
                     <button id="button" className="text-white bg-verde hover:bg-verde-claro font-medium rounded text-sm w-full py-3 text-center transition delay-75 hover:text-verde flex items-center justify-center object-center hover:font-semibold"
