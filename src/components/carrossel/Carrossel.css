@@ -1,9 +1,9 @@
 :root {
-    --swiper-theme-color: #FFFFFF;
+    --swiper-theme-color: #c4d446;
 }
 
 .swiper {
-    height: 35vh;
+    height: 50vh;
     margin: 0;
 }
 
