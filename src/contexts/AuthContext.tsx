@@ -25,6 +25,7 @@ export function AuthProvider({ children }: AuthProvidersProps) {
         senha: "",
         foto: "",
         token: "",
+        admin: false,
     })
 
     const [isLoading, setIsLoading] = useState(false)
@@ -51,6 +52,7 @@ export function AuthProvider({ children }: AuthProvidersProps) {
             senha: "",
             foto: "",
             token: "",
+            admin: false,
         });
     }
     return (

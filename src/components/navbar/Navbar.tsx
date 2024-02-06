@@ -65,6 +65,10 @@ function Navbar() {
                     <Stack size={20} />
                     Produtos
                 </Link>
+                <Link to="/categorias" className="flex items-center gap-2 text-white font-medium">
+                    <Folders size={20} />
+                    Categorias
+                </Link>
                 <Link to="/sobre" className="flex items-center gap-2 text-white font-medium">
                     <UsersThree size={20} />
                     Sobre
