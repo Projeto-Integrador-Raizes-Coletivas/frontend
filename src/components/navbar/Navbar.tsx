@@ -5,7 +5,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { toastAlerta } from "../../util/toastAlerta";
 
 function Navbar() {
-    const logo = "/src/assets/img/raizes-logo-inline.png";
+    const logo = "https://ik.imagekit.io/raizescoletivas/raizes-logo-inline.png";
 
     const isLogin = location.pathname === '/login';
     const isCadastro = location.pathname === '/cadastro';
