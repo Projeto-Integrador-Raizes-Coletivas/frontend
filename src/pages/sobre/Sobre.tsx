@@ -6,7 +6,7 @@ function Sobre() {
         <div id="container" className="bg-seasalt flex justify-center">
             <div id="subcontainer" className="flex flex-col items-center">
                 <div className='items-center flex'>
-                    <img src="https://ik.imagekit.io/padrin/Pi/Bem%20Vindo%20ao%20mundo%20mais%20verde!%20(1).png?updatedAt=1706659675717" alt="" />
+                    <img src="https://ik.imagekit.io/raizescoletivas/sobre.png" alt="Banner do Sobre Nós" />
                 </div>
                 <div id="texto" className=' mt-10 mb-3 mx-[33%]'>
                     <p> Raizes Coletivas é um projeto inspirado em um dos Objetivos de Desenvolvimento Sustentável da ONU - a ODS 2 - Fome Zero e Agricultura Sustentável.
@@ -20,7 +20,7 @@ function Sobre() {
                     <div id='card' className='grid grid-cols-[1fr_2fr] border-solid rounded-3xl shadow-lg hover:shadow-verde bg-white
                     hover:scale-105 delay-50 duration-700 pb-2 md:pb-1'>
                         <div id='img' className='flex flex-col place-items-center justify-center ml-[10%] py-2'>
-                            <img src="https://ik.imagekit.io/padrin/Pi/Amandinha.png?updatedAt=1706652234630" alt="" width={"200px"} />
+                            <img src="https://ik.imagekit.io/raizescoletivas/amanda_tsai.png" alt="Foto de perfil da Amanda" width={"200px"} />
                         </div>
                         <div className='flex flex-col w-full justify-around'>
                             <div className='flex flex-col justify-center items-center'>
@@ -44,7 +44,7 @@ function Sobre() {
                     <div id='card' className='grid grid-cols-[1fr_2fr] border-solid rounded-3xl shadow-lg hover:shadow-verde bg-white
                     hover:scale-105 delay-50 duration-700 pb-2 md:pb-1'>
                         <div id='img' className='flex flex-col place-items-center justify-center ml-[10%] py-2 '>
-                            <img src="https://ik.imagekit.io/padrin/Pi/Eu.png?updatedAt=1706652222241" alt="" width={"200px"} />
+                            <img src="https://ik.imagekit.io/raizescoletivas/bryan_vieira.png" alt="Foto de perfil do Bryan" width={"200px"} />
                         </div>
                         <div className='flex flex-col w-full justify-around'>
                             <div className='flex flex-col justify-center items-center'>
@@ -68,7 +68,7 @@ function Sobre() {
                     <div id='card' className='grid grid-cols-[1fr_2fr] border-solid rounded-3xl shadow-lg hover:shadow-verde bg-white
                     hover:scale-105 delay-50 duration-700 pb-2 md:pb-1'>
                         <div id='img' className='flex flex-col place-items-center justify-center ml-[10%] py-2'>
-                            <img src="https://ik.imagekit.io/padrin/Pi/Carol.png?updatedAt=1706652076388" alt="" width={"200px"} />
+                            <img src="https://ik.imagekit.io/raizescoletivas/caroline_dias.png" alt="Foto de perfil da Carolina" width={"200px"} />
                         </div>
                         <div className='flex flex-col w-full justify-around'>
                             <div className='flex flex-col justify-center items-center'>
@@ -92,7 +92,7 @@ function Sobre() {
                     <div id='card' className='grid grid-cols-[1fr_2fr] border-solid rounded-3xl shadow-lg hover:shadow-verde bg-white
                     hover:scale-105 delay-50 duration-700 pb-2 md:pb-1'>
                         <div id='img' className='flex flex-col place-items-center justify-center ml-[10%] py-2'>
-                            <img src="https://ik.imagekit.io/padrin/Pi/gabs.png?updatedAt=1706649666756" alt="" width={"200px"} />
+                            <img src="https://ik.imagekit.io/raizescoletivas/gabriel_rodrigues.png" alt="Foto de perfil do Gabriel" width={"200px"} />
                         </div>
                         <div className='flex flex-col w-full justify-around'>
                             <div className='flex flex-col justify-center items-center'>
@@ -100,8 +100,8 @@ function Sobre() {
                                 <h3>Desenvolvedor Full Stack Java</h3>
                             </div>
                             <div id='text'>
-                                <p >"Sempre fui sonhador, é isso que me mantém vivo!"</p>
-                                <p>~Afro X</p>
+                                <p >"Se eu não for o mais talentoso, eu vou ser o mais esforçado."</p>
+                                <p>~Krawk</p>
                             </div>
                             <div id="links" className="flex flex-row items-center gap-4 text-center justify-center ">
                                 <div id='github'>
@@ -118,7 +118,7 @@ function Sobre() {
                     <div id='card' className='grid grid-cols-[1fr_2fr] border-solid rounded-3xl shadow-lg hover:shadow-verde bg-white
                     hover:scale-105 delay-50 duration-700 pb-2 md:pb-1'>
                         <div id='img' className='flex flex-col place-items-center justify-center ml-[10%] py-2'>
-                            <img src="https://ik.imagekit.io/padrin/Pi/jeni.png?updatedAt=1706651820756" alt="" width={"200px"} />
+                            <img src="https://ik.imagekit.io/raizescoletivas/jeniffer_ribeiro.png" alt="Foto de perfil da Jeniffer" width={"200px"} />
                         </div>
                         <div className='flex flex-col w-full justify-around'>
                             <div className='flex flex-col justify-center items-center'>
@@ -127,7 +127,7 @@ function Sobre() {
                             </div>
                             <div id='text'>
                                 <p>"O importante não é ter muita experiência, mas ter muita sede de aprender."</p>
-                                <p>~Ada Lovelace</p>
+                                <p>~Ada Lovelace</p>
                             </div>
                             <div id="links" className="flex flex-row items-center gap-4 text-center justify-center ">
                                 <div id='github'>

@@ -5,7 +5,7 @@ import { RotatingLines } from 'react-loader-spinner'
 import { cadastrarUsuario } from '../../service/Service'
 
 function Cadastro() {
-    const logo = "/src/assets/img/raizes-logo-circle-green.png";
+    const logo = "https://ik.imagekit.io/raizescoletivas/raizes-logo-circle-green.png";
 
     const navigate = useNavigate()
 

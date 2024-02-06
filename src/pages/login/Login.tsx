@@ -5,7 +5,7 @@ import UsuarioLogin from '../../models/UsuarioLogin';
 import { RotatingLines } from 'react-loader-spinner';
 
 function Login() {
-    const logo = "/src/assets/img/raizes-logo-circle-green.png";
+    const logo = "https://ik.imagekit.io/raizescoletivas/raizes-logo-circle-green.png";
 
     const navigate = useNavigate();
 
