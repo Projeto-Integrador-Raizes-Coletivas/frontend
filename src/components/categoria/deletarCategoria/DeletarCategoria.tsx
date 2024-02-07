@@ -5,6 +5,7 @@ import Categoria from "../../../models/Categoria";
 import { buscar, deletar } from "../../../service/Service";
 import { RotatingLines } from "react-loader-spinner";
 import { toastAlerta } from "../../../util/toastAlerta";
+import "./DeletarCategoria.css"
 
 
 function DeletarCategoria() {
@@ -77,14 +78,16 @@ function DeletarCategoria() {
             <div className='mx-auto max-w-md px-6 py-8 bg-white border-0 shadow-lg sm:rounded-3xl w-[60%]'>
                 <h1 className='text-4xl font-medium text-center my-4'> Deletar Categoria</h1>
                 <p className='text-center font-medium mb-4'> Tem certeza de que deseja apagar a categoria a seguir?</p>
-                <div className="center">
-                    <div className="article-card">
-                        <div className="content">
-                            <p className="id">Categoria #{categoria.id}</p>
-                            <p className="nome">{categoria.nome}</p>
-                            <p className="classificacao">{categoria.classificacao}</p>
+                <div id="cardCategoria" className="cursor-default">
+                    <div className="center">
+                        <div className="article-card">
+                            <div className="content">
+                                <p className="id">Categoria #{categoria.id}</p>
+                                <p className="nome">{categoria.nome}</p>
+                                <p className="classificacao">{categoria.classificacao}</p>
+                            </div>
+                            <img src={categoria.foto} alt={`Foto do produto ${categoria.nome}`} className="FOTO" />
                         </div>
-                        <img src={categoria.foto} alt={`Foto do produto ${categoria.nome}`} className="FOTO" />
                     </div>
                 </div>
                 <div className="relative flex gap-5 overflow-hidden pt-6 justify-center">
