@@ -39,8 +39,8 @@ function CardProduto({ produto }: CardProdutoProps) {
                     <img className="mb-2 w-[230px] h-[230px] rounded-sm" src={produto.foto} alt={`Foto do produto ${produto.nome}`} />
                     <div className="flex flex-col">
                         <div className="flex justify-between mb-1">
-                                <h5 className="font-semibold tracking-tight text-gray-900">{produto.nome}</h5>
-                            <Link to="/categoria/">
+                            <h5 className="font-semibold tracking-tight text-gray-900">{produto.nome}</h5>
+                            <Link to="/categorias/">
                                 <span className="bg-verde-claro text-verde text-xs 
                         font-semibold px-2.5 py-[1px] flex items-center rounded ms-3">{produto.categoria?.nome}</span>
                             </Link>
