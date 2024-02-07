@@ -43,7 +43,7 @@ function Login() {
                 </Link>
 
                 <form className="flex justify-center items-center flex-col w-full gap-5" onSubmit={login}>
-                    <h2 className="text-slate-900 text-3xl">Entrar na sua perfil</h2>
+                    <h2 className="text-slate-900 text-3xl">Entrar na sua conta</h2>
 
                     <div className="flex flex-col w-full">
                         <input
