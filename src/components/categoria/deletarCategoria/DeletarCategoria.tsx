@@ -5,7 +5,6 @@ import Categoria from "../../../models/Categoria";
 import { buscar, deletar } from "../../../service/Service";
 import { RotatingLines } from "react-loader-spinner";
 import { toastAlerta } from "../../../util/toastAlerta";
-import "./DeletarCategoria.css"
 
 
 function DeletarCategoria() {

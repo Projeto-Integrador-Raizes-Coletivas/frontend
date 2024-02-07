@@ -6,7 +6,7 @@ function Sobre() {
         <div id="container" className="bg-seasalt flex justify-center">
             <div id="subcontainer" className="flex flex-col items-center">
                 <div className='items-center flex'>
-                    <img src="https://ik.imagekit.io/raizescoletivas/sobre.png" alt="Banner do Sobre Nós" />
+                    <img src="https://ik.imagekit.io/raizescoletivas/sobre.png?updatedAt=1707316652622" alt="Banner do Sobre Nós"/>
                 </div>
                 <div id="texto" className=' mt-10 mb-3 mx-[33%]'>
                     <p> Raizes Coletivas é um projeto inspirado em um dos Objetivos de Desenvolvimento Sustentável da ONU - a ODS 2 - Fome Zero e Agricultura Sustentável.

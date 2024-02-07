@@ -57,7 +57,9 @@ function Footer() {
                         <Link to="/produtos">
                             Produtos
                         </Link>
-
+                        <Link to="/categorias">
+                            Categorias
+                        </Link>
                         <Link to="/sobre">
                             Sobre
                         </Link>
