@@ -71,41 +71,45 @@ function DeletarProduto() {
         navigate("/produtos")
     }
 
+    const preco = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(produto.preco);
+
+
     return (
-        <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar Produto</h1>
+        <div id="tela" className="flex justify-center items-center min-h-[80vh]">
+            <div id="card" className='mx-auto max-w-md px-6 py-8 bg-white border-0 shadow-lg sm:rounded-3xl w-[60%]'>
+                <h1 className='text-4xl font-medium text-center my-4'> Deletar Produto</h1>
+                <p className='text-center font-medium mb-4'> Tem certeza de que deseja apagar a produto a seguir?</p>
+            <div className="flex justify-center">
+                <div id="cardproduto" className="max-w-sm bg-white border border-gray-200 
+            rounded-lg shadow p-[8px] container min-h-[400px] w-[250px] flex flex-col justify-between cursor-default">
 
-            <p className='text-center font-semibold mb-4'>
-                Você tem certeza de que deseja apagar o produto a seguir?
-            </p>
-
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                <header
-                    className='py-2 px-6 bg-verde text-white font-bold text-2xl'>
-                    Produto
-                </header>
-                <div className="p-4">
-                    <p className='text-xl h-full'>{produto.nome}</p>
-                    <p>{produto.descricao}</p>
-                    <p>Categoria: {produto.categoria?.classificacao}</p>
-                    <p>Preço: {(produto.preco)}</p>
-                    <div className='container mx-auto mt-4 rounded-2xl overflow-hidden'>
-                        <img
-                            className='w-56 mx-auto mt-[-8rem] border-8 border-white relative z-10'
-                            src={produto.foto} alt={`Foto do produto ${produto.nome}`} />
+                    <div id="?????">
+                        <img className="mb-2 w-[250px] h-[250px] rounded-sm" src={produto.foto} alt={`Foto do produto ${produto.nome}`} />
+                        
+                        <div className="flex flex-col">
+                            
+                            <div className="flex justify-between mb-1">
+                                    <h5 className="font-semibold tracking-tight text-gray-900">{produto.nome}</h5>
+                                <span className="bg-verde-claro text-verde text-xs 
+                        font-semibold px-2.5 py-[1px] flex items-center rounded ms-3">{produto.categoria?.nome}</span>
+                            </div>
+                            <div className='max-h-[60px] container mb-2 text-sm'>
+                                <span>{produto.descricao}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                        <span className="text-xl font-semibold text-gray-900 font-sans">R${preco}</span>
+                        <button className='text-white bg-verde focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-3 py-1.5 text-center cursor-default'>
+                            Comprar
+                        </button>
                     </div>
                 </div>
-                <div className="flex">
+            </div>
+                <div className="relative flex gap-5 overflow-hidden pt-6 justify-center">
                     <button
-                        className='text-slate-100 bg-red-400 
-                                hover:bg-red-600 w-full py-2'
-                        onClick={retornar}>
-                        Não
-                    </button>
-                    <button
-                        className='w-full text-slate-100 bg-verde-claro
-                        hover:bg-verde flex items-center justify-center'
-                        onClick={deletarProduto}>
+                        className='text-white bg-verde hover:bg-verde-claro font-medium
+                         rounded-xl text-sm w-1/3 py-3 text-center transition delay-75 hover:text-verde flex items-center justify-center object-center hover:font-medium'>
                         {isLoading ?
                             <RotatingLines
                                 strokeColor="white"
@@ -114,12 +118,16 @@ function DeletarProduto() {
                                 width="24"
                                 visible={true}
                             /> :
-                            <span>Sim</span>
+                            <span className="relative">Sim</span>
                         }
+                    </button>
+                    <button className="text-white bg-red-500 hover:bg-red-700 font-medium
+                         rounded-xl text-sm w-1/3 py-3 text-center transition delay-75 flex items-center justify-center object-center hover:font-medium" onClick={retornar}>
+                        <span className="relative">Cancelar</span>
                     </button>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

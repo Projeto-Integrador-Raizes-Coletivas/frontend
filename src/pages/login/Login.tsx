@@ -43,7 +43,7 @@ function Login() {
                 </Link>
 
                 <form className="flex justify-center items-center flex-col w-full gap-5" onSubmit={login}>
-                    <h2 className="text-slate-900 text-3xl">Entrar na sua conta</h2>
+                    <h2 className="text-slate-900 text-3xl">Entrar na sua perfil</h2>
 
                     <div className="flex flex-col w-full">
                         <input
@@ -87,7 +87,7 @@ function Login() {
                     <hr className="border-verde w-3/5" />
 
                     <p>
-                        Ainda não tem uma conta?{' '}
+                        Ainda não tem uma perfil?{' '}
                         <Link to="/cadastro" className="text-verde hover:underline font-bold">
                             Cadastre-se
                         </Link>

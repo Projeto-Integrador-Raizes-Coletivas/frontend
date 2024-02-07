@@ -30,7 +30,8 @@ function CardCategoria({ categoria }: CardCategoriaProps) {
                             <button className="text-white bg-green-500 hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-500 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 bottom-[55px] absolute right-2"><Pencil size={20} /></button>
                         </Link>
                         <Link to={`/deletarCategoria/${categoria.id}`}>
-                            <button className="text-white bg-red-500 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-700 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 bottom-2 absolute right-2"><Trash size={20} /></button>
+                            <button className="text-white bg-red-500 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-700 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 bottom-2 absolute right-2">
+                                <Trash size={20} /></button>
                         </Link>
                     </div>
                     <img src={categoria.foto} alt={`Foto do produto ${categoria.nome}`} className="FOTO" />

@@ -1,4 +1,4 @@
-import { FolderPlus, Folders, MagnifyingGlass, ShoppingCart, SignIn, SignOut, Stack, UserPlus, UsersThree } from "@phosphor-icons/react";
+import { FolderPlus, Folders, MagnifyingGlass, ShoppingCart, SignIn, SignOut, Stack, User, UserPlus, UsersThree } from "@phosphor-icons/react";
 import { ReactNode, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -24,43 +24,67 @@ function Navbar() {
         navigate("/login")
     }
 
-    if (usuario.usuario == 'root@root.com') {
+    if (usuario.admin == true) {
         NavbarAdmin = (
             <div className="flex gap-7 ml-28">
                 <Link to="/produtos" className="flex items-center gap-2 text-white font-medium">
                     <Stack size={20} />
                     Produtos
                 </Link>
-                <Link to="/cadastrarProduto" className="flex items-center gap-2 text-white font-medium">
-                    <FolderPlus size={20} />
-                    Criar Produto
-                </Link>
-
                 <Link to="/categorias" className="flex items-center gap-2 text-white font-medium">
                     <Folders size={20} />
                     Categorias
-                </Link>
-
-                <Link to="/cadastrarCategoria" className="flex items-center gap-2 text-white font-medium">
-                    <FolderPlus size={20} />
-                    Criar categoria
                 </Link>
                 <Link to="/sobre" className="flex items-center gap-2 text-white font-medium">
                     <UsersThree size={20} />
                     Sobre
                 </Link>
-                <Link to='/conta' className="flex items-center gap-2 text-white font-medium">Conta</Link>
                 <Link to='/cart' className="flex items-center gap-2 text-white font-medium">
                     <ShoppingCart size={25} weight='bold' /></Link>
-                <div className="flex items-center gap-2 text-white font-medium cursor-pointer" onClick={logout}>
-                    <SignOut size={20} />
-                    Sair
+                <div className="group md:size-11 size-7">
+
+                    <img
+                        src={usuario.foto}
+                        alt=""
+                        className="object-cover md:border-2 border border-verde-claro rounded-full
+                            bg-verde-claro bg-opacity-30 md:size-11 size-7 hover:border-white"
+                    />
+
+                    <div className="absolute hidden text-secondary-purpleDark group-hover:block w-56 bg-light-gray z-[51] bg-white right-4 rounded">
+                        <ul className="items-center flex-row justify-between gap-10">
+                            <li className="hover:bg-verde py-4 px-4 cursor-pointer hover:text-white">
+                                <Link to="/cadastrarProduto" className="flex items-center gap-2 font-medium">
+                                    <FolderPlus size={20} />
+                                    Criar Produto
+                                </Link>
+                            </li>
+                            <li className="hover:bg-verde py-4 px-4 cursor-pointer hover:text-white">
+                                <Link to="/cadastrarCategoria" className="flex items-center gap-2 font-medium ">
+                                    <FolderPlus size={20} />
+                                    Criar categoria
+                                </Link>
+                            </li>
+                            <li className="hover:bg-verde py-4 px-4 cursor-pointer hover:text-white">
+                                <Link to="/perfil" className="flex items-center gap-2 font-medium">
+                                    <User size={20} />
+                                    Perfil
+                                </Link>
+                            </li>
+                            <li className="hover:bg-verde py-4 px-4 cursor-pointer hover:text-white">
+                                <Link to="/" className="flex items-center gap-2 font-medium" onClick={logout}>
+                                    <SignOut size={20} />
+                                    Sair
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         )
     } else if (usuario.token !== '') {
         NavbarLogado = (
-            <div className="flex gap-7 ml-28">
+            <div className="flex gap-7 ml-28" >
+
                 <Link to="/produtos" className="flex items-center gap-2 text-white font-medium">
                     <Stack size={20} />
                     Produtos
@@ -73,12 +97,33 @@ function Navbar() {
                     <UsersThree size={20} />
                     Sobre
                 </Link>
-                <Link to='/conta' className="flex items-center gap-2 text-white font-medium">Conta</Link>
                 <Link to='/cart' className="flex items-center gap-2 text-white font-medium">
                     <ShoppingCart size={25} weight='bold' /></Link>
-                <div className="flex items-center gap-2 text-white font-medium cursor-pointer" onClick={logout}>
-                    <SignOut size={20} />
-                    Sair
+                <div className="group md:size-11 size-7">
+
+                    <img
+                        src={usuario.foto}
+                        alt=""
+                        className="object-cover md:border-2 border border-verde-claro rounded-full
+                            bg-verde-claro bg-opacity-30 md:size-11 size-7 hover:border-white"
+                    />
+
+                    <div className="absolute hidden text-secondary-purpleDark group-hover:block w-56 bg-light-gray z-[51] bg-white right-4 rounded">
+                        <ul className="items-center flex-row justify-between gap-10">
+                            <li className="hover:bg-verde py-4 px-4 cursor-pointer hover:text-white">
+                                <Link to="/perfil" className="flex items-center gap-2 font-medium">
+                                    <User size={20} />
+                                    Perfil
+                                </Link>
+                            </li>
+                            <li className="hover:bg-verde py-4 px-4 cursor-pointer hover:text-white">
+                                <Link to="/" className="flex items-center gap-2 font-medium" onClick={logout}>
+                                    <SignOut size={20} />
+                                    Sair
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         )
@@ -91,6 +136,10 @@ function Navbar() {
                 <Link to="/produtos" className="flex items-center gap-2 text-white font-medium">
                     <Stack size={20} />
                     Produtos
+                </Link>
+                <Link to="/categorias" className="flex items-center gap-2 text-white font-medium">
+                    <Folders size={20} />
+                    Categorias
                 </Link>
                 <Link to="/sobre" className="flex items-center gap-2 text-white font-medium">
                     <UsersThree size={20} />

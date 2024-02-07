@@ -18,24 +18,12 @@ function ListaCategorias() {
 
 
     async function buscarCategorias() {
-        try {
-            await buscar('/categorias', setCategorias, {
-                headers: { Authorization: token }
-            })
-        } catch (error: any) {
-            if (error.toString().includes('403')) {
-                toastAlerta('O token Expirou!', "info")
-                handleLogout()
-            }
-        }
+        await buscar('/categorias', setCategorias, {
+            headers: {
+                Authorization: token
+            },
+        })
     }
-
-    useEffect(() => {
-        if (token === '') {
-            toastAlerta('Você precisa estar logado!',"info")
-            navigate('/')
-        }
-    }, [token])
 
 
     useEffect(() => {
