@@ -80,7 +80,7 @@ function Cadastro() {
                 <form className='flex justify-center items-center flex-col w-full gap-3'
                     onSubmit={cadastrarNovoUsuario}>
 
-                    <h2 className='text-slate-900 text-3xl'>Cadastrar nova perfil</h2>
+                    <h2 className='text-slate-900 text-3xl'>Cadastrar nova Conta</h2>
 
                     <div className="flex flex-col w-full">
                         <label htmlFor="nome">Nome:</label>
