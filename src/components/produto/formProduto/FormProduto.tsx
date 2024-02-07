@@ -204,13 +204,13 @@ function FormProduto() {
                     </div>
                     <div className="relative z-0 w-full mb-5">
                         <select name="categoria" id="categoria"
-                            className='pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200'
+                            className='pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200 '
                             onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
                         >
                             <option value="" selected disabled>Selecione uma Categoria</option>
                             {categorias.map((categoria) => (
                                 <>
-                                    <option value={categoria.id}>{categoria.nome}</option>
+                                    <option value={categoria.id}>{categoria.nome} - {categoria.classificacao}</option>
                                 </>
                             ))}
                         </select>
