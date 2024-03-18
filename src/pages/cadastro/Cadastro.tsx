@@ -71,18 +71,18 @@ function Cadastro() {
     return (
         <div className="bg-bege h-screen flex items-center justify-center">
 
-            <div className="flex items-center justify-center flex-col gap-6 bg-white w-1/2 m-auto shadow-2xl rounded-md p-8">
+            <div className="flex items-center justify-center flex-col xl:gap-4 2xl:gap-6 bg-white xl:w-[35%] 2xl:w-1/2 m-auto shadow-2xl rounded-md p-8">
 
                 <Link to="/">
-                    <img src={logo} alt="Logo do Raízes Coletivas" className="max-w-36" />
+                    <img src={logo} alt="Logo do Raízes Coletivas" className="xl:max-w-20 2xl:max-w-36" />
                 </Link>
 
                 <form className='flex justify-center items-center flex-col w-full gap-3'
                     onSubmit={cadastrarNovoUsuario}>
 
-                    <h2 className='text-slate-900 text-3xl'>Cadastrar nova conta</h2>
+                    <h2 className='text-slate-900 xl:text-2xl 2xl:text-3xl'>Cadastrar nova conta</h2>
 
-                    <div className="flex flex-col w-full">
+                    <div className="flex flex-col w-full xl:text-sm 2xl:text-base">
                         <label htmlFor="nome">Nome:</label>
                         <input
                             type="text"
@@ -95,7 +95,7 @@ function Cadastro() {
                         />
                     </div>
 
-                    <div className="flex flex-col w-full">
+                    <div className="flex flex-col w-full xl:text-sm 2xl:text-base">
                         <label htmlFor="usuario">Usuário:</label>
                         <input
                             type="text"
@@ -108,7 +108,7 @@ function Cadastro() {
                         />
                     </div>
 
-                    <div className="flex flex-col w-full">
+                    <div className="flex flex-col w-full xl:text-sm 2xl:text-base ">
                         <label htmlFor="foto">Foto:</label>
                         <input
                             type="text"
@@ -121,7 +121,7 @@ function Cadastro() {
                         />
                     </div>
 
-                    <div className="flex flex-col w-full">
+                    <div className="flex flex-col w-full xl:text-sm 2xl:text-base">
                         <label htmlFor="senha">Senha:</label>
                         <input
                             type="password"
@@ -134,7 +134,7 @@ function Cadastro() {
                         />
                     </div>
 
-                    <div className="flex flex-col w-full">
+                    <div className="flex flex-col w-full xl:text-sm 2xl:text-base">
                         <label htmlFor="confirmarSenha">Confirmar senha:</label>
                         <input
                             type="password"

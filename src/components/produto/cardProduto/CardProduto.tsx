@@ -23,9 +23,9 @@ function CardProduto({ produto }: CardProdutoProps) {
     const preco = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(produto.preco);
 
     return (
-        <div>
-            <div className="max-w-sm bg-white border border-gray-200 
-            rounded-lg shadow p-[8px] container hover:translate-y-[-2px] min-h-[400px] w-[250px] flex flex-col justify-between">
+        <div className='CardProduto center  '>
+            <div className="card max-w-sm bg-white border border-gray-200 
+            rounded-lg  p-[8px] container  min-h-[400px]  w-[250px] flex flex-col justify-between">
                 <div>
                     <DotsThree
                         size={32}

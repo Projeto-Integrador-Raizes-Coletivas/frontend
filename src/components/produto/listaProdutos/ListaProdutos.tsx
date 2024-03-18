@@ -37,8 +37,7 @@ function ListaProdutos() {
                     wrapperClass="dna-wrapper mx-auto"
                 />
             )}
-            <div className='container mx-auto my-4 
-                grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-6 gap-4 justify-center items-center object-center'
+            <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-4 justify-center items-center object-center w-max'
             >
                 {produtos.map((produto) => (
                     <CardProduto key={produto.id} produto={produto} />

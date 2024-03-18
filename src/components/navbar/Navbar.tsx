@@ -164,13 +164,13 @@ function Navbar() {
         return null;
 
     return (
-        <div className="flex items-center bg-verde h-[68px] px-24 py-2">
-            <Link to="/" className="flex-none me-28">
+        <div className="flex justify-between items-center bg-verde h-[68px] px-24 py-2">
+            <Link to="/" className="flex-none me-28 ">
                 <img src={logo} alt="Logo do Raízes Coletivas" className="max-w-36" />
             </Link>
 
-            <div className="flex-1 flex justify-center items-center relative w-2/4">
-                <input type="text" placeholder="Pesquisar" className="h-11 w-full rounded-lg px-4 py-4 focus:outline-none" />
+            <div className="flex-1 hidden justify-center items-center relative w-2/4">
+                <input type="text" placeholder="Pesquisar" className="h-11  w-full rounded-lg px-4 py-4 focus:outline-none" />
                 <MagnifyingGlass size={20} color="#356760" className="absolute right-4" />
             </div>
             {NavbarLogado}

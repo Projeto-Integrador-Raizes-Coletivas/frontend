@@ -16,7 +16,7 @@ function Home() {
         <>
             <Carrossel />
 
-            <div className="bg-bege flex flex-row justify-center gap-x-20 p-2 text-sm">
+            <div className="bg-bege flex flex-row justify-center xl:gap-x-5 2xl:gap-x-20 p-2 text-sm cursor-default">
                 <div className="flex gap-x-2 p-2 items-center">
                     <Truck size={20} />
                     <p>{avisos[0].aviso1}</p>
