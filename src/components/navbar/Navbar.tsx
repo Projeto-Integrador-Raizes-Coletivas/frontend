@@ -40,7 +40,7 @@ function Navbar() {
                     Sobre
                 </Link>
                 <Link to='/cart' className="flex items-center gap-2 text-white font-medium">
-                    <ShoppingCart size={25} weight='bold' /></Link>
+                    <ShoppingCart size={25} /></Link>
                 <div className="group md:size-11 size-7">
 
                     <img
@@ -98,7 +98,7 @@ function Navbar() {
                     Sobre
                 </Link>
                 <Link to='/cart' className="flex items-center gap-2 text-white font-medium">
-                    <ShoppingCart size={25} weight='bold' /></Link>
+                    <ShoppingCart size={25} /></Link>
                 <div className="group md:size-11 size-7">
 
                     <img
@@ -155,7 +155,7 @@ function Navbar() {
                     Login
                 </Link>
                 <Link to='/cart' className="flex items-center gap-2 text-white font-medium">
-                    <ShoppingCart size={25} weight='bold' /></Link>
+                    <ShoppingCart size={25} /></Link>
             </div>
         )
     }

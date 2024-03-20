@@ -87,7 +87,7 @@ function Login() {
                     <hr className="border-verde w-3/5" />
 
                     <p>
-                        Ainda não tem uma Conta?{' '}
+                        Ainda não tem uma conta?{' '}
                         <Link to="/cadastro" className="text-verde hover:underline font-bold">
                             Cadastre-se
                         </Link>
